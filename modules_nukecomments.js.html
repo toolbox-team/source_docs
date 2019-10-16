@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/nukecomments.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="TBListener.html">TBListener</a><ul class='methods'><li data-type='method'><a href="TBListener.html#clear">clear</a></li><li data-type='method'><a href="TBListener.html#on">on</a></li><li data-type='method'><a href="TBListener.html#start">start</a></li><li data-type='method'><a href="TBListener.html#stop">stop</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-BackgroundPage.html">BackgroundPage</a><ul class='methods'><li data-type='method'><a href="module-BackgroundPage.html#~clearNotification">clearNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~emptyCacheTimeout">emptyCacheTimeout</a></li><li data-type='method'><a href="module-BackgroundPage.html#~getOAuthTokens">getOAuthTokens</a></li><li data-type='method'><a href="module-BackgroundPage.html#~initCachetimeout">initCachetimeout</a></li><li data-type='method'><a href="module-BackgroundPage.html#~makeHeaderObject">makeHeaderObject</a></li><li data-type='method'><a href="module-BackgroundPage.html#~makeRequest">makeRequest</a></li><li data-type='method'><a href="module-BackgroundPage.html#~onClickNotification">onClickNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~sendNativeNotification">sendNativeNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~sendPageNotification">sendPageNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~uuidv4">uuidv4</a></li></ul></li><li><a href="module-CommentNuke.html">CommentNuke</a><ul class='methods'><li data-type='method'><a href="module-CommentNuke.html#~parseComments">parseComments</a></li></ul></li><li><a href="module-ProfilePro.html">ProfilePro</a><ul class='methods'><li data-type='method'><a href="module-ProfilePro.html#~addModSubsToSidebar">addModSubsToSidebar</a></li><li data-type='method'><a href="module-ProfilePro.html#~addToSiteTable">addToSiteTable</a></li><li data-type='method'><a href="module-ProfilePro.html#~addTrophiesToSidebar">addTrophiesToSidebar</a></li><li data-type='method'><a href="module-ProfilePro.html#~filterModdable">filterModdable</a></li><li data-type='method'><a href="module-ProfilePro.html#~hideModActionsThings">hideModActionsThings</a></li><li data-type='method'><a href="module-ProfilePro.html#~makeUserSidebar">makeUserSidebar</a></li><li data-type='method'><a href="module-ProfilePro.html#~regExpEscape">regExpEscape</a></li><li data-type='method'><a href="module-ProfilePro.html#~searchProfile">searchProfile</a></li></ul></li><li><a href="module-queueOverlay.html">queueOverlay</a><ul class='methods'><li data-type='method'><a href="module-queueOverlay.html#~figureOutMulti">figureOutMulti</a></li><li data-type='method'><a href="module-queueOverlay.html#~makeQueueOverlay">makeQueueOverlay</a></li><li data-type='method'><a href="module-queueOverlay.html#~reloadIframe">reloadIframe</a></li></ul></li><li><a href="module-QueueTools.html">QueueTools</a><ul class='methods'><li data-type='method'><a href="module-QueueTools.html#~checkForActions">checkForActions</a></li><li data-type='method'><a href="module-QueueTools.html#~getActions">getActions</a></li><li data-type='method'><a href="module-QueueTools.html#~getModlog">getModlog</a></li></ul></li><li><a href="module-TBLog.html">TBLog</a></li></ul><h3>Namespaces</h3><ul><li><a href="TBui.html">TBui</a><ul class='methods'><li data-type='method'><a href="TBui.html#.clearNotification">clearNotification</a></li><li data-type='method'><a href="TBui.html#.contextTrigger">contextTrigger</a></li><li data-type='method'><a href="TBui.html#.makeCommentThread">makeCommentThread</a></li><li data-type='method'><a href="TBui.html#.makeSingleComment">makeSingleComment</a></li><li data-type='method'><a href="TBui.html#.makeSubmissionEntry">makeSubmissionEntry</a></li><li data-type='method'><a href="TBui.html#.popup">popup</a></li><li data-type='method'><a href="TBui.html#.showNotification">showNotification</a></li><li data-type='method'><a href="TBui.html#.tbRedditEvent">tbRedditEvent</a></li></ul></li><li><a href="TBUtils.html">TBUtils</a><ul class='methods'><li data-type='method'><a href="TBUtils.html#.alert">alert</a></li><li data-type='method'><a href="TBUtils.html#.apiOauthRequest">apiOauthRequest</a></li><li data-type='method'><a href="TBUtils.html#.cleanSubredditName">cleanSubredditName</a></li><li data-type='method'><a href="TBUtils.html#.colorNameToHex">colorNameToHex</a></li><li data-type='method'><a href="TBUtils.html#.daysToMilliseconds">daysToMilliseconds</a></li><li data-type='method'><a href="TBUtils.html#.debugInformation">debugInformation</a></li><li data-type='method'><a href="TBUtils.html#.escapeHTML">escapeHTML</a></li><li data-type='method'><a href="TBUtils.html#.getHead">getHead</a></li><li data-type='method'><a href="TBUtils.html#.getJSON">getJSON</a></li><li data-type='method'><a href="TBUtils.html#.getRandomNumber">getRandomNumber</a></li><li data-type='method'><a href="TBUtils.html#.getTime">getTime</a></li><li data-type='method'><a href="TBUtils.html#.getToolboxDevs">getToolboxDevs</a></li><li data-type='method'><a href="TBUtils.html#.humaniseDays">humaniseDays</a></li><li data-type='method'><a href="TBUtils.html#.isConfigValidVersion">isConfigValidVersion</a></li><li data-type='method'><a href="TBUtils.html#.isOdd">isOdd</a></li><li data-type='method'><a href="TBUtils.html#.link">link</a></li><li data-type='method'><a href="TBUtils.html#.millisecondsToDays">millisecondsToDays</a></li><li data-type='method'><a href="TBUtils.html#.minutesToMilliseconds">minutesToMilliseconds</a></li><li data-type='method'><a href="TBUtils.html#.moveArrayItem">moveArrayItem</a></li><li data-type='method'><a href="TBUtils.html#.niceDateDiff">niceDateDiff</a></li><li data-type='method'><a href="TBUtils.html#.notification">notification</a></li><li data-type='method'><a href="TBUtils.html#.post">post</a></li><li data-type='method'><a href="TBUtils.html#.removeLastDirectoryPartOf">removeLastDirectoryPartOf</a></li><li data-type='method'><a href="TBUtils.html#.replaceAll">replaceAll</a></li><li data-type='method'><a href="TBUtils.html#.saneSort">saneSort</a></li><li data-type='method'><a href="TBUtils.html#.saneSortAs">saneSortAs</a></li><li data-type='method'><a href="TBUtils.html#.sendRequest">sendRequest</a></li><li data-type='method'><a href="TBUtils.html#.sortBy">sortBy</a></li><li data-type='method'><a href="TBUtils.html#.stringFormat">stringFormat</a></li><li data-type='method'><a href="TBUtils.html#.timeConverterISO">timeConverterISO</a></li><li data-type='method'><a href="TBUtils.html#.timeConverterRead">timeConverterRead</a></li><li data-type='method'><a href="TBUtils.html#.title_to_url">title_to_url</a></li><li data-type='method'><a href="TBUtils.html#.unescapeHTML">unescapeHTML</a></li><li data-type='method'><a href="TBUtils.html#.updateCache">updateCache</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/nukecomments.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/** @module CommentNuke **/
+function nukecomments () {
+    const self = new TB.Module('Comment Nuke');
+    self.shortname = 'CommentNuke';
+
+    // Default settings
+    self.settings['enabled']['default'] = false;
+    self.config['betamode'] = false;
+
+    self.register_setting('ignoreDistinguished', {
+        type: 'boolean',
+        default: true,
+        title: 'Ignore distinguished comments from mods and admins when nuking a chain.',
+    });
+
+    self.register_setting('executionType', {
+        type: 'selector',
+        values: ['remove', 'lock'],
+        default: 'remove',
+        advanced: true,
+        title: 'Default nuke type selected when nuking',
+    });
+
+    // Settings for old reddit only
+    self.register_setting('showNextToUser', {
+        type: 'boolean',
+        default: true,
+        advanced: true,
+        title: 'Show nuke button next to the username instead of under the comment.',
+        oldReddit: true,
+    });
+
+    self.init = function () {
+        // This will contain a flat listing of all comments to be removed.
+        let removalChain = [];
+        // Distinguished chain
+        let distinguishedComments = [];
+        // If we do get api errors we put the comment id in here so we can retry removing them.
+        let missedComments = [];
+        let removalRunning = false;
+        let nukeOpen = false;
+        const $body = $('body');
+
+        const ignoreDistinguished = self.setting('ignoreDistinguished'),
+              showNextToUser = self.setting('showNextToUser'),
+              executionType = self.setting('executionType');
+
+        // Nuke button clicked
+        $body.on('click', '.tb-nuke-button', function (event) {
+            self.log('nuke button clicked.');
+            if (nukeOpen) {
+                TB.ui.textFeedback('Nuke popup is already open.', TBui.FEEDBACK_NEGATIVE);
+                return;
+            }
+            TB.ui.longLoadSpinner(true);
+
+            nukeOpen = true;
+            removalChain = [];
+            missedComments = [];
+            distinguishedComments = [];
+
+            const $this = $(this);
+            const commentID = $this.attr('data-comment-id');
+            const postID = $this.attr('data-post-id');
+            const subreddit = $this.attr('data-subreddit');
+            const positions = TBui.drawPosition(event);
+
+            const fetchURL = `/r/${subreddit}/comments/${postID}/slug/${commentID}.json?limit=1500`;
+
+            const $popupContents = $(`&lt;div class="tb-nuke-popup-content">
+                &lt;div class="tb-nuke-feedback">Fetching all comments belonging to chain.&lt;/div>
+                &lt;div class="tb-nuke-details">&lt;/div>
+            &lt;/div>`);
+
+            // Pop-up
+            const $popup = TB.ui.popup({
+                title: 'Nuke comment chain',
+                tabs: [
+                    {
+                        title: 'Nuke tab',
+                        tooltip: '',
+                        content: $popupContents,
+                        footer: '&lt;button class="tb-execute-nuke tb-action-button">Execute&lt;/button> &lt;button class="tb-retry-nuke tb-action-button">Retry&lt;/button>',
+                    },
+                ],
+                cssClass: 'nuke-button-popup',
+                draggable: true,
+            }).appendTo($body)
+                .css({
+                    left: positions.leftPosition,
+                    top: positions.topPosition,
+                    display: 'block',
+                });
+
+            TBUtils.getJSON(fetchURL, {raw_json: 1}).then(data => {
+                TBStorage.purifyObject(data);
+                parseComments(data[1].data.children[0], postID, subreddit).then(() => {
+                    TB.ui.longLoadSpinner(false);
+                    $popup.find('.tb-nuke-feedback').text('Finished analyzing comments.');
+
+                    const removalChainLength = removalChain.length;
+                    // Distinguished chain
+                    const distinguishedCommentsLength = distinguishedComments.length;
+                    $popup.find('.tb-nuke-details').html(TBStorage.purify(`
+                    &lt;p>${removalChainLength + distinguishedCommentsLength} comments found (Already removed comments not included).&lt;/p>
+                    &lt;p>${distinguishedCommentsLength} distinguished comments found.&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="tb-ignore-distinguished-checkbox" ${ignoreDistinguished ? ' checked="checked"' : ''}>Ignore distinguished comments from mods and admins&lt;/label>&lt;/p>
+                    &lt;p>
+                        &lt;label>&lt;input type="radio" value="remove" name="tb-execution-type-radio" class="tb-execution-type-radio" ${executionType === 'remove' ? ' checked="checked"' : ''}>Remove comments&lt;/label>
+                        &lt;label>&lt;input type="radio" value="lock" name="tb-execution-type-radio" class="tb-execution-type-radio" ${executionType === 'lock' ? ' checked="checked"' : ''}>Lock comments&lt;/label>
+                    &lt;/p>
+                    `));
+                    $popup.find('.tb-execute-nuke').show();
+                });
+            });
+
+            $popup.on('click', '.tb-execute-nuke, .tb-retry-nuke', function () {
+                removalRunning = true;
+                TB.ui.longLoadSpinner(true);
+                const $this = $(this);
+                $this.hide();
+                let commentArray;
+                const $nukeFeedback = $popup.find('.tb-nuke-feedback');
+                const $nukeDetails = $popup.find('.tb-nuke-details');
+                const temptIgnoreDistinguished = $popup.find('.tb-ignore-distinguished-checkbox').prop('checked');
+                const executionType = $popup.find('.tb-execution-type-radio:checked').val();
+                if ($this.hasClass('tb-retry-nuke')) {
+                    commentArray = missedComments;
+                    missedComments = [];
+                } else {
+                    if (temptIgnoreDistinguished) {
+                        commentArray = removalChain;
+                    } else {
+                        commentArray = removalChain.concat(distinguishedComments);
+                    }
+                }
+
+                $nukeFeedback.text(`${executionType === 'remove' ? 'Removing' : 'Locking'} comments.`);
+                $nukeDetails.html('');
+
+                // Oldest comments first.
+                commentArray = TBUtils.saneSort(commentArray);
+                const removalArrayLength = commentArray.length;
+                let removalCount = 0;
+                TBUtils.forEachChunkedRateLimit(commentArray, 20, comment => {
+                    removalCount++;
+                    TB.ui.textFeedback(`${executionType === 'remove' ? 'Removing' : 'Locking'} comment ${removalCount}/${removalArrayLength}`, TB.ui.FEEDBACK_NEUTRAL);
+                    if (executionType === 'remove') {
+                        TBUtils.removeThing(`t1_${comment}`, false, result => {
+                            if (!result) {
+                                missedComments.push(comment);
+                            }
+                        });
+                    } else if (executionType === 'lock') {
+                        TBUtils.lock(`t1_${comment}`, result => {
+                            if (!result) {
+                                missedComments.push(comment);
+                            }
+                        });
+                    }
+                }, () => {
+                    removalRunning = false;
+                    TB.ui.longLoadSpinner(false);
+                    $nukeFeedback.text(`Done ${executionType === 'remove' ? 'removing' : 'locking'} comments.`);
+                    const missedLength = missedComments.length;
+                    if (missedLength) {
+                        $nukeDetails.text(`${missedLength}: not ${executionType === 'remove' ? 'removed' : 'locked'} because of API errors. Hit retry to attempt removing them again.`);
+                        $popup.find('.tb-retry-nuke').show;
+                    } else {
+                        setTimeout(() => {
+                            $popup.find('.close').click();
+                        }, 1500);
+                    }
+                });
+            });
+
+            $popup.on('click', '.close', () => {
+                if (removalRunning) {
+                    TB.ui.textFeedback('Comment chain nuke in progress, cannot close popup.', TBui.FEEDBACK_NEGATIVE);
+                } else {
+                    $popup.remove();
+                    nukeOpen = false;
+                }
+            });
+        });
+
+        /**
+         * Will given a reddit API comment object go through the chain and put all comments
+         * @function parseComments
+         * @param {object} object Comment chain object
+         * @param {string} postID Post id the comments belong to
+         * @param {string} subreddit Subreddit the comment chain belongs to.
+         * @returns {Promise}
+         */
+
+        async function parseComments (object, postID, subreddit) {
+            switch (object.kind) {
+            case 'Listing': {
+                for (let i = 0; i &lt; object.data.children.length; i++) {
+                    await parseComments(object.data.children[i], postID, subreddit);
+                }
+                break;
+            }
+
+            case 't1': {
+                const distinguishedType = object.data.distinguished;
+                if ((distinguishedType === 'admin' || distinguishedType === 'moderator') &amp;&amp; !distinguishedComments.includes(object.data.id)) {
+                    distinguishedComments.push(object.data.id);
+                    // Ignore already removed stuff to lower the amount of calls we need to make.
+                } else if (!removalChain.includes(object.data.id) &amp;&amp; !object.data.removed &amp;&amp; !object.data.spam) {
+                    removalChain.push(object.data.id);
+                }
+
+                if (object.data.hasOwnProperty('replies') &amp;&amp; object.data.replies &amp;&amp; typeof object.data.replies === 'object') {
+                    await parseComments(object.data.replies, postID, subreddit); // we need to go deeper.
+                }
+                break;
+            }
+
+            case 'more': {
+                self.log('"load more" encountered, going even deeper');
+                let commentIDs = object.data.children;
+                if (!commentIDs.length) {
+                    // "continue this thread" links generated when a thread gets
+                    // too deep return empty `children` lists, thanks Reddit
+                    commentIDs = [object.data.parent_id.substring(3)];
+                }
+
+                for (const id of commentIDs) {
+                    const fetchUrl = `/r/${subreddit}/comments/${postID}/slug/${id}.json?limit=1500`;
+                    // Lets get the comments.
+                    const data = await TBUtils.getJSON(fetchUrl, {raw_json: 1});
+                    TBStorage.purifyObject(data);
+                    await parseComments(data[1].data.children[0], postID, subreddit);
+                }
+            }
+                break;
+            default: {
+                self.log('default, this should not happen...');
+                // This shouldn't actually happen...
+            }
+            }
+        }
+
+        // Add nuke buttons where needed
+        TB.listener.on('comment', e => {
+            const pageType = TBUtils.pageDetails.pageType;
+            const $target = $(e.target);
+            const subreddit = e.detail.data.subreddit.name;
+            const commentID = e.detail.data.id.substring(3);
+            const postID = e.detail.data.post.id.substring(3);
+
+            TBUtils.getModSubs(() => {
+                // We have to mod the subreddit to show the button
+                if (!TBUtils.modsSub(subreddit)) {
+                    return;
+                }
+                // We also have to be on a comments page or looking at a context popup
+                if (pageType !== 'subredditCommentsPage' &amp;&amp; pageType !== 'subredditCommentPermalink' &amp;&amp; !$target.closest('.context-button-popup').length) {
+                    return;
+                }
+
+                const NukeButtonHTML = `&lt;span class="tb-nuke-button tb-bracket-button" data-comment-id="${commentID}" data-post-id="${postID}" data-subreddit="${subreddit}" title="Remove comment chain starting with this comment">${e.detail.type === 'TBcommentOldReddit' &amp;&amp; !showNextToUser ? 'Nuke' : 'R'}&lt;/span>`;
+                if (showNextToUser &amp;&amp; TBUtils.isOldReddit) {
+                    const $userContainter = $target.closest('.entry, .tb-comment-entry').find('.tb-jsapi-author-container .tb-frontend-container');
+                    $userContainter.append(NukeButtonHTML);
+                } else {
+                    $target.append(NukeButtonHTML);
+                }
+            });
+        });
+    };
+
+    TB.register_module(self);
+} // nukecomments() wrapper
+
+window.addEventListener('TBModuleLoaded', () => {
+    nukecomments();
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Oct 16 2019 13:50:10 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

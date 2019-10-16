@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/historybutton.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="TBListener.html">TBListener</a><ul class='methods'><li data-type='method'><a href="TBListener.html#clear">clear</a></li><li data-type='method'><a href="TBListener.html#on">on</a></li><li data-type='method'><a href="TBListener.html#start">start</a></li><li data-type='method'><a href="TBListener.html#stop">stop</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-BackgroundPage.html">BackgroundPage</a><ul class='methods'><li data-type='method'><a href="module-BackgroundPage.html#~clearNotification">clearNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~emptyCacheTimeout">emptyCacheTimeout</a></li><li data-type='method'><a href="module-BackgroundPage.html#~getOAuthTokens">getOAuthTokens</a></li><li data-type='method'><a href="module-BackgroundPage.html#~initCachetimeout">initCachetimeout</a></li><li data-type='method'><a href="module-BackgroundPage.html#~makeHeaderObject">makeHeaderObject</a></li><li data-type='method'><a href="module-BackgroundPage.html#~makeRequest">makeRequest</a></li><li data-type='method'><a href="module-BackgroundPage.html#~onClickNotification">onClickNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~sendNativeNotification">sendNativeNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~sendPageNotification">sendPageNotification</a></li><li data-type='method'><a href="module-BackgroundPage.html#~uuidv4">uuidv4</a></li></ul></li><li><a href="module-CommentNuke.html">CommentNuke</a><ul class='methods'><li data-type='method'><a href="module-CommentNuke.html#~parseComments">parseComments</a></li></ul></li><li><a href="module-ProfilePro.html">ProfilePro</a><ul class='methods'><li data-type='method'><a href="module-ProfilePro.html#~addModSubsToSidebar">addModSubsToSidebar</a></li><li data-type='method'><a href="module-ProfilePro.html#~addToSiteTable">addToSiteTable</a></li><li data-type='method'><a href="module-ProfilePro.html#~addTrophiesToSidebar">addTrophiesToSidebar</a></li><li data-type='method'><a href="module-ProfilePro.html#~filterModdable">filterModdable</a></li><li data-type='method'><a href="module-ProfilePro.html#~hideModActionsThings">hideModActionsThings</a></li><li data-type='method'><a href="module-ProfilePro.html#~makeUserSidebar">makeUserSidebar</a></li><li data-type='method'><a href="module-ProfilePro.html#~regExpEscape">regExpEscape</a></li><li data-type='method'><a href="module-ProfilePro.html#~searchProfile">searchProfile</a></li></ul></li><li><a href="module-queueOverlay.html">queueOverlay</a><ul class='methods'><li data-type='method'><a href="module-queueOverlay.html#~figureOutMulti">figureOutMulti</a></li><li data-type='method'><a href="module-queueOverlay.html#~makeQueueOverlay">makeQueueOverlay</a></li><li data-type='method'><a href="module-queueOverlay.html#~reloadIframe">reloadIframe</a></li></ul></li><li><a href="module-QueueTools.html">QueueTools</a><ul class='methods'><li data-type='method'><a href="module-QueueTools.html#~checkForActions">checkForActions</a></li><li data-type='method'><a href="module-QueueTools.html#~getActions">getActions</a></li><li data-type='method'><a href="module-QueueTools.html#~getModlog">getModlog</a></li></ul></li><li><a href="module-TBLog.html">TBLog</a></li></ul><h3>Namespaces</h3><ul><li><a href="TBui.html">TBui</a><ul class='methods'><li data-type='method'><a href="TBui.html#.clearNotification">clearNotification</a></li><li data-type='method'><a href="TBui.html#.contextTrigger">contextTrigger</a></li><li data-type='method'><a href="TBui.html#.makeCommentThread">makeCommentThread</a></li><li data-type='method'><a href="TBui.html#.makeSingleComment">makeSingleComment</a></li><li data-type='method'><a href="TBui.html#.makeSubmissionEntry">makeSubmissionEntry</a></li><li data-type='method'><a href="TBui.html#.popup">popup</a></li><li data-type='method'><a href="TBui.html#.showNotification">showNotification</a></li><li data-type='method'><a href="TBui.html#.tbRedditEvent">tbRedditEvent</a></li></ul></li><li><a href="TBUtils.html">TBUtils</a><ul class='methods'><li data-type='method'><a href="TBUtils.html#.alert">alert</a></li><li data-type='method'><a href="TBUtils.html#.apiOauthRequest">apiOauthRequest</a></li><li data-type='method'><a href="TBUtils.html#.cleanSubredditName">cleanSubredditName</a></li><li data-type='method'><a href="TBUtils.html#.colorNameToHex">colorNameToHex</a></li><li data-type='method'><a href="TBUtils.html#.daysToMilliseconds">daysToMilliseconds</a></li><li data-type='method'><a href="TBUtils.html#.debugInformation">debugInformation</a></li><li data-type='method'><a href="TBUtils.html#.escapeHTML">escapeHTML</a></li><li data-type='method'><a href="TBUtils.html#.getHead">getHead</a></li><li data-type='method'><a href="TBUtils.html#.getJSON">getJSON</a></li><li data-type='method'><a href="TBUtils.html#.getRandomNumber">getRandomNumber</a></li><li data-type='method'><a href="TBUtils.html#.getTime">getTime</a></li><li data-type='method'><a href="TBUtils.html#.getToolboxDevs">getToolboxDevs</a></li><li data-type='method'><a href="TBUtils.html#.humaniseDays">humaniseDays</a></li><li data-type='method'><a href="TBUtils.html#.isConfigValidVersion">isConfigValidVersion</a></li><li data-type='method'><a href="TBUtils.html#.isOdd">isOdd</a></li><li data-type='method'><a href="TBUtils.html#.link">link</a></li><li data-type='method'><a href="TBUtils.html#.millisecondsToDays">millisecondsToDays</a></li><li data-type='method'><a href="TBUtils.html#.minutesToMilliseconds">minutesToMilliseconds</a></li><li data-type='method'><a href="TBUtils.html#.moveArrayItem">moveArrayItem</a></li><li data-type='method'><a href="TBUtils.html#.niceDateDiff">niceDateDiff</a></li><li data-type='method'><a href="TBUtils.html#.notification">notification</a></li><li data-type='method'><a href="TBUtils.html#.post">post</a></li><li data-type='method'><a href="TBUtils.html#.removeLastDirectoryPartOf">removeLastDirectoryPartOf</a></li><li data-type='method'><a href="TBUtils.html#.replaceAll">replaceAll</a></li><li data-type='method'><a href="TBUtils.html#.saneSort">saneSort</a></li><li data-type='method'><a href="TBUtils.html#.saneSortAs">saneSortAs</a></li><li data-type='method'><a href="TBUtils.html#.sendRequest">sendRequest</a></li><li data-type='method'><a href="TBUtils.html#.sortBy">sortBy</a></li><li data-type='method'><a href="TBUtils.html#.stringFormat">stringFormat</a></li><li data-type='method'><a href="TBUtils.html#.timeConverterISO">timeConverterISO</a></li><li data-type='method'><a href="TBUtils.html#.timeConverterRead">timeConverterRead</a></li><li data-type='method'><a href="TBUtils.html#.title_to_url">title_to_url</a></li><li data-type='method'><a href="TBUtils.html#.unescapeHTML">unescapeHTML</a></li><li data-type='method'><a href="TBUtils.html#.updateCache">updateCache</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/historybutton.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>function historybutton () {
+    const self = new TB.Module('History Button');
+
+    self.shortname = 'HButton';
+
+    // This should be a setting, methinks.
+    self.SPAM_REPORT_SUB = 'spam';
+
+    self.settings['enabled']['default'] = true;
+
+    self.fetched = {};// fetched histories
+
+    self.register_setting('rtsComment', {
+        type: 'boolean',
+        default: true,
+        title: 'Post user summary when submitting spam reports',
+    });
+
+    self.register_setting('alwaysComments', {
+        type: 'boolean',
+        default: true,
+        advanced: true,
+        title: 'Load comment history immediately',
+    });
+
+    self.register_setting('commentCount', {
+        type: 'selector',
+        values: ['100', '200', '300', '400', '500', '600', '700', '800', '900', '1000'],
+        default: '1000',
+        advanced: true,
+        title: 'Number of comments to retrieve per user history',
+    });
+
+    self.register_setting('onlyshowInhover', {
+        type: 'boolean',
+        default: TB.storage.getSetting('GenSettings', 'onlyshowInhover', true),
+        hidden: true,
+    });
+
+    /**
+     * Attach an [H] button to all users
+     */
+
+    self.attachHistoryButton = function ($target, author, subreddit, buttonText = 'H') {
+        requestAnimationFrame(() => {
+            $target.append(`
+                &lt;a href="javascript:;" class="user-history-button tb-bracket-button" data-author="${author}" ${subreddit &amp;&amp; `data-subreddit="${subreddit}"`} title="view &amp; analyze user's submission and comment history">
+                    ${buttonText}
+                &lt;/a>
+            `);
+        });
+    };
+
+    self.attachToModmail = function () {
+        const $body = $('body');
+        $body.find('.Thread__message').not('.tb-history').each(function () {
+            const $this = $(this);
+            if ($this.find('.tb-attr').length === 0) {
+                $this.addClass('tb-history').find('.Message__divider').eq(0).after('&lt;span class="tb-attr">&lt;/span>');
+            }
+            const $tbAttrs = $this.find('.tb-attr');
+            const UserButtonHTMLnewMM = '&lt;span class="tb-history-button" >&amp;nbsp;&lt;a href="javascript:;" class="user-history-button tb-bracket-button" title="view &amp; analyze user\'s submission and comment history">H&lt;/a>&lt;/span>';
+            $tbAttrs.append(UserButtonHTMLnewMM);
+        });
+
+        const userButtonHTMLside = '&lt;span class="tb-attr-history InfoBar__recent">&lt;span class="tb-history-button">&lt;a href="javascript:;" class="user-history-button tb-bracket-button modmail-sidebar" title="view &amp; analyze user\'s submission and comment history">User History&lt;/a>&lt;/span>&lt;/span>';
+
+        const $sidebar = $body.find('.ThreadViewer__infobar');
+
+        $sidebar.find('.tb-recents').not('.tb-history').addClass('tb-history').append(userButtonHTMLside);
+    };
+
+    self.runJsAPI = function () {
+        self.log('run');
+
+        const onlyshowInhover = self.setting('onlyshowInhover');
+        TB.listener.on('author', e => {
+            const $target = $(e.target);
+            // Skip adding the button next to the username if:
+            // - the onlyShowInHover preference is set,
+            // - we're not on old reddit (since the preference doesn't work there), and
+            // - we didn't make the thing the author is on (since the hovercard doesn't show up on constructed things).
+            if (onlyshowInhover &amp;&amp; !TBUtils.isOldReddit &amp;&amp; !$target.closest('.tb-thing').length) {
+                return;
+            }
+            const author = e.detail.data.author,
+                  subreddit = e.detail.data.subreddit &amp;&amp; e.detail.data.subreddit.name;
+            self.attachHistoryButton($target, author, subreddit);
+        });
+
+        TB.listener.on('userHovercard', e => {
+            const $target = $(e.target),
+                  author = e.detail.data.user.username,
+                  subreddit = e.detail.data.subreddit &amp;&amp; e.detail.data.subreddit.name;
+            self.attachHistoryButton($target, author, subreddit, 'User History');
+        });
+
+        window.addEventListener('TBNewPage', event => {
+            if (event.detail.pageType === 'userProfile') {
+                const user = event.detail.pageDetails.user;
+                TBui.contextTrigger('tb-user-history', {
+                    addTrigger: true,
+                    triggerText: 'user history',
+                    triggerIcon: TBui.icons.history,
+                    title: `Show history for /u/${user}`,
+                    dataAttributes: {
+                        author: user,
+                    },
+                });
+            } else {
+                TBui.contextTrigger('tb-user-profile', {addTrigger: false});
+            }
+        });
+    };
+
+    /**
+     * Initiate the module
+     */
+    self.init = function () {
+        self.log('init');
+        const $body = $('body');
+        TBUtils.modSubCheck(modSubCheck => {
+            self.log(`mscheck: ${modSubCheck}`);
+            if (modSubCheck) {
+                self.log('passed');
+
+                if (TBUtils.isNewModmail) {
+                    setTimeout(() => {
+                        self.attachToModmail();
+                    }, 750);
+                } else {
+                    self.log('not new modmail');
+                    self.runJsAPI();
+                }
+
+                // NER support.
+                window.addEventListener('TBNewThings', () => {
+                    self.attachToModmail();
+                });
+
+                $body.on('click', '.user-history-button, #tb-user-history', function (event) {
+                    const $this = $(this);
+                    const $target = $(event.currentTarget);
+                    let author;
+                    if ($body.find('.ThreadViewer').length > 0) {
+                        if ($this.hasClass('modmail-sidebar')) {
+                            author = $('.InfoBar__username').text();
+                        } else {
+                            author = $(this).closest('.Message__header').find('.Message__author').text().substring(2);
+                        }
+                    } else {
+                        author = $target.attr('data-author');
+                    }
+                    const thisSubreddit = $target.attr('data-subreddit');
+
+                    if ($target.attr('id') === 'tb-user-history') {
+                        event.pageY -= 600;
+                        event.pageX += 200;
+                    }
+
+                    const positions = TBui.drawPosition(event);
+
+                    const subreddits = {submissions: {}, comments: {}},
+                          counters = {submissions: 0, comments: 0, commentsOP: 0},
+                          accounts = {},
+                          subredditList = [],
+                          domainList = [],
+                          commentSubredditList = [],
+
+                          gettingUserData = true,
+                          domains = [],
+                          domainslist = [],
+
+                          popupContent = `
+                            &lt;div>
+                                &lt;a href="${TBUtils.link(`/user/${author}`)}" target="_blank">${author}&lt;/a>
+                                &lt;span class="karma" />
+                                &lt;a class="comment-report tb-general-button" href="javascript:;">comment history&lt;/a>
+                                &lt;a class="markdown-report tb-general-button" href="javascript:;">view report in markdown&lt;/a>
+                                &lt;a class="rts-report tb-general-button" style="display: none" href="javascript:;" data-commentbody="">report spammer&lt;/a>
+                                &lt;br/>
+                                &lt;span class="redditorTime">&lt;/span>
+                                &lt;br/>
+                                &lt;p class="tb-history-disclaimer">
+                                &lt;strong>Disclaimer: &lt;/strong> The information shown below is an &lt;i>indication&lt;/i> not a complete picture, it lacks the context you would get from having a look at a person's profile.
+
+                                &lt;/p>
+                                &lt;b>Available history:&lt;/b> &lt;br>
+                                &lt;label class="submission-count">&lt;/label> submissions
+                                &lt;br>
+                                &lt;span class="tb-history-comment-stats" style="display:none">
+                                &lt;label class="comment-count">&lt;/label> comments of those &lt;label class="comment-count-OP">&lt;/label> are in their own posts (commented as OP).
+                                &lt;/span>
+                                &lt;/div>
+                                &lt;div class="history-table-wrapper">
+                                &lt;div class="table domain-table">
+                                    &lt;table>
+                                        &lt;thead>
+                                            &lt;tr>
+                                                &lt;th class="url-td">domain submitted from&lt;/th>
+                                                &lt;th class="url-count">count&lt;/th>&lt;th class="url-percentage">%&lt;/th>
+                                            &lt;/tr>
+                                        &lt;/thead>
+                                        &lt;tbody>
+                                            &lt;tr>&lt;td colspan="6" class="error">loading...&lt;/td>&lt;/tr>
+                                        &lt;/tbody>
+                                    &lt;/table>
+                                &lt;/div>
+                                &lt;div class="table subreddit-table">
+                                    &lt;table>
+                                        &lt;thead>
+                                            &lt;tr>
+                                                &lt;th class="url-td">subreddit submitted to&lt;/th>
+                                                &lt;th class="url-count">count&lt;/th>
+                                                &lt;th class="url-percentage">%&lt;/th>
+                                                &lt;th class="url-karma">karma&lt;/th>
+                                            &lt;/tr>
+                                        &lt;/thead>
+                                        &lt;tbody>
+                                            &lt;tr>
+                                                &lt;td colspan="6" class="error">loading...&lt;/td>
+                                            &lt;/tr>
+                                        &lt;/tbody>
+                                    &lt;/table>
+                                &lt;/div>
+                                &lt;/div>
+                                &lt;div class="history-table-wrapper">
+                                &lt;div class="table comment-table" style="display: none">
+                                    &lt;table>
+                                        &lt;thead>
+                                            &lt;tr>
+                                                &lt;th class="url-td">subreddit commented in&lt;/th>
+                                                &lt;th class="url-count">count&lt;/th>
+                                                &lt;th class="url-percentage">%&lt;/th>
+                                            &lt;/tr>
+                                        &lt;/thead>
+                                        &lt;tbody>
+                                            &lt;tr>&lt;td colspan="6" class="error">loading...&lt;/td>&lt;/tr>
+                                        &lt;/tbody>
+                                    &lt;/table>
+
+                                &lt;/div>
+                                &lt;div class="table account-table">
+                                    &lt;table>
+                                        &lt;thead>
+                                            &lt;tr>
+                                                &lt;th class="url-td">account submitted from&lt;/th>
+                                                &lt;th class="url-count">count&lt;/th>
+                                                &lt;th class="url-percentage">%&lt;/th>
+                                            &lt;/tr>
+                                        &lt;/thead>
+                                        &lt;tbody>
+                                            &lt;tr>&lt;td colspan="6" class="error">loading...&lt;/td>&lt;/tr>
+                                        &lt;/tbody>
+                                    &lt;/table>
+                                &lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        `;
+
+                    const $overlay = $this.closest('.tb-page-overlay');
+                    let $appendTo;
+                    if ($overlay.length) {
+                        $appendTo = $overlay;
+                    } else {
+                        $appendTo = $('body');
+                    }
+
+                    const $popup = TB.ui.popup({
+                        title: 'History Button',
+                        tabs: [
+                            {
+                                title: 'Tab1',
+                                tooltip: 'Tooltip shown when hovering tab.',
+                                content: popupContent,
+                                footer: '',
+                            },
+                        ],
+                        cssClass: 'history-button-popup',
+                        draggable: true,
+                    }).appendTo($appendTo)
+                        .css({
+                            left: positions.leftPosition,
+                            top: positions.topPosition,
+                            display: 'block',
+                        });
+
+                    self.fetched[author] = {
+                        popup: $popup,
+                        subreddits,
+                        counters,
+                        accounts,
+                        subredditList,
+                        domainList,
+                        commentSubredditList,
+                        author,
+                        gettingUserData,
+                        domains,
+                        domainslist,
+                    };
+
+                    $popup.on('click', '.close', () => {
+                        if (!$overlay.length) {
+                            $popup.hide();
+                        } else {
+                            $popup.remove();
+                        }
+                    });
+
+                    self.showAuthorInformation(author);
+                    self.populateSubmissionHistory('', author, thisSubreddit);
+
+                    $popup.on('click', '.markdown-report', self.showMarkdownReport.bind(self, author));
+                    $popup.on('click', '.rts-report', self.reportAuthorToSpam.bind(self, author));
+                    $popup.on('click.comment-report', '.comment-report', function () {
+                        $(this).hide();
+                        $popup.off('click.comment-report');
+                        self.populateCommentHistory('', author, thisSubreddit);
+                    });
+
+                    if (self.setting('alwaysComments')) {
+                        $popup.find('.comment-report').click();
+                    }
+                });
+            }
+        });
+    };
+
+    /**
+     * Show author information (Karma, How long they've been a redditor for)
+     */
+    self.showAuthorInformation = async function (author) {
+        const $contentBox = self.fetched[author].popup;
+
+        const d = await TBUtils.getJSON(`/user/${author}/about.json`);
+        TBStorage.purifyObject(d);
+        const joinedDate = new Date(d.data.created_utc * 1000),
+              redditorTime = TBUtils.niceDateDiff(joinedDate);
+
+        requestAnimationFrame(() => {
+            $contentBox.find('.karma').text(`(${d.data.link_karma} | ${d.data.comment_karma})`);
+            $contentBox.find('.redditorTime').text(`redditor for ${redditorTime}`);
+        });
+    };
+
+    /**
+     * Show the markdown report
+     */
+    self.showMarkdownReport = function (author) {
+        const $contentBox = self.fetched[author].popup,
+              markdownReport = $contentBox.find('.rts-report').attr('data-commentbody'),
+              $markdown = $contentBox.find('.submission-markdown-text');
+
+        if ($markdown.length > 0) {
+            $markdown.html(markdownReport).toggle();
+        } else {
+            $contentBox.find('.table.domain-table').before(`&lt;div class="submission-markdown">
+                &lt;textarea class="tb-input submission-markdown-text">${markdownReport}&lt;/textarea>
+            &lt;/div>`);
+        }
+    };
+
+    /**
+     * Populate the submission history for a user
+     *
+     * @param after A token given by reddit for paginated results, allowing us to get the next page of results
+     * @param author The author whose history we're fetching
+     * @param thisSubreddit The name of the subreddit to highlight in generated tables
+     */
+    self.populateSubmissionHistory = function (after, author, thisSubreddit) {
+        const user = self.fetched[author],
+              $contentBox = user.popup,
+              $rtsLink = $contentBox.find('.rts-report'),
+              $submissionCount = $contentBox.find('.submission-count'),
+              $domainTable = $contentBox.find('.domain-table tbody'),
+              $subredditTable = $contentBox.find('.subreddit-table tbody'),
+              $error = $contentBox.find('.subreddit-table .error, .domain-table .error, .account-table-table .error'),
+              $accountTable = $contentBox.find('.account-table tbody'),
+              TYPE = {
+                  PATH: 1, // e.g. example.org/path/user
+                  SUBDOMAIN: 2, // e.g. user.example.org
+              },
+              domainSpecs = {
+                  // keys are the supported sites, and determine if we have a match
+                  'flickr.com': {
+                      path: 'photos/',
+                      provider: 'flickr',
+                      type: TYPE.PATH,
+                  },
+                  'medium.com': {
+                      path: '@',
+                      provider: 'Medium',
+                      type: TYPE.PATH,
+                  },
+                  'speakerdeck.com': {
+                      provider: 'Speaker Deck',
+                      type: TYPE.PATH,
+                  },
+                  'blogspot.com': {
+                      provider: 'Blogspot',
+                      type: TYPE.SUBDOMAIN,
+                  },
+                  'tumblr.com': {
+                      provider: 'Tumblr',
+                      type: TYPE.SUBDOMAIN,
+                  },
+                  'deviantart.com': {
+                      provider: 'deviantart',
+                      type: TYPE.SUBDOMAIN,
+                  },
+                  'artstation.com': {
+                      path: 'artwork/',
+                      provider: 'artstation',
+                      type: TYPE.PATH,
+                  },
+                  'twitter.com': {
+                      provider: 'Twitter',
+                      type: TYPE.PATH,
+                  },
+              };
+
+        TB.ui.longLoadNonPersistent(true);
+
+        TBUtils.getJSON(`/user/${author}/submitted.json`, {
+            after,
+            sort: 'new',
+            limit: 100,
+        }).catch(() => {
+            self.log('Shadowbanned?');
+            $error.html('unable to load userdata&lt;/br>shadowbanned?');
+            TB.ui.longLoadNonPersistent(false);
+        }).then(d => {
+            TBStorage.purifyObject(d);
+            // This is another exit point of the script. Hits this code after loading 1000 submissions for a user
+            if ($.isEmptyObject(d.data.children)) {
+                requestAnimationFrame(() => {
+                    if (user.counters.submissions > 0) {
+                        $submissionCount.html(TBStorage.purify(`${user.counters.submissions}+`));
+                    } else {
+                        $submissionCount.html(TBStorage.purify(user.counters.submissions));
+                    }
+
+                    // If the error elements can be seen it is because there are no submissions
+                    $error.html('no submissions');
+                });
+
+                user.gettingUserData = false;
+
+                TB.ui.longLoadNonPersistent(false);
+                return;
+            }
+
+            const after = d.data.after;
+            let commentBody = `Available submission history for /u/${author}:\n\ndomain submitted from|count|%\n:-|-:|-:`;
+
+            user.counters.submissions += d.data.children.length;
+            // There's still more subsmissions to load, so we're going to run again
+            if (after) {
+                $submissionCount.html(TBStorage.purify(`Loading... (${user.counters.submissions})`));
+                self.populateSubmissionHistory(after, author, thisSubreddit);
+            } else {
+                // All of the submissions have been loaded at this point
+                user.gettingUserData = false;
+                $submissionCount.html(TBStorage.purify(user.counters.submissions));
+            }
+
+            TB.ui.longLoadNonPersistent(false);
+            // For every submission, incremenet the count for the subreddit and domain by one.
+            $.each(d.data.children, (index, value) => {
+                const data = value.data;
+
+                if (!user.domains[data.domain]) {
+                    user.domains[data.domain] = {
+                        count: 0,
+                    };
+                    user.domainList.push(data.domain);
+                }
+                user.domains[data.domain].count++;
+
+                if (!user.subreddits.submissions[data.subreddit]) {
+                    user.subreddits.submissions[data.subreddit] = {
+                        count: 0,
+                        karma: 0,
+                    };
+                    user.subredditList.push(data.subreddit);
+                }
+                user.subreddits.submissions[data.subreddit].count++;
+                user.subreddits.submissions[data.subreddit].karma += data.score;
+
+                if (data.media &amp;&amp; data.media.oembed &amp;&amp; data.media.oembed.author_url) {
+                    const oembed = data.media.oembed;
+
+                    addAccount({
+                        name: oembed.author_name,
+                        provider: oembed.provider_name,
+                        provider_url: oembed.provider_url,
+                        url: oembed.author_url,
+                    });
+                } else {
+                    let spec = domainSpecs[data.domain],
+                        details, domain;
+
+                    if (!spec) {
+                    // "sub.dom.ain.domain.com" -> "domain.com" (NOTE: does not support "domain.co.uk")
+                        domain = data.domain.split('.').slice(-2).join('.');
+                        spec = domainSpecs[domain];
+                    }
+
+                    if (spec) {
+                        spec.domain = domain || data.domain;
+                        details = getDomainDetails(spec, data.url);
+                        if (details) {
+                            addAccount(details);
+                        }
+                    }
+                }
+            });
+
+            // Sort the domains by submission count
+            user.domainList.sort((a, b) => user.domains[b].count - user.domains[a].count);
+
+            // Empty the domain table
+            $domainTable.empty();
+
+            // Get the total account od domain submissions
+            let totalDomainCount = 0;
+
+            for (const domain in user.domains) {
+                if (user.domains.hasOwnProperty(domain)) {
+                    totalDomainCount += user.domains[domain].count;
+                }
+            }
+
+            // Are there more domains than are shown?
+            let moreDomains = 0;
+
+            // Append all domains to the table and to the report comment
+            user.domainList.forEach((domain, index) => {
+                const domainCount = user.domains[domain].count,
+                      match = domain.match(/^self.(\w+)$/),
+                      percentage = Math.round(domainCount / totalDomainCount * 100);
+
+                let cssClass = '';
+                if (percentage >= 10 &amp;&amp; domainCount > 4) {
+                    cssClass = percentage >= 20 ? 'tb-history-row-danger' : 'tb-history-row-warning';
+                }
+
+                let url = TBUtils.link(`/search?q=site%3A${domain}+author%3A${author}+is_self%3A0&amp;restrict_sr=off&amp;sort=new&amp;feature=legacy_search`);
+                // If the domain is a self post, change the URL
+                if (match) {
+                    url = TBUtils.link(`/r/${match[1]}/search?q=author%3A${author}+is_self%3A1&amp;restrict_sr=on&amp;sort=new&amp;feature=legacy_search`);
+                }
+
+                // Append domain to the table
+                requestAnimationFrame(() => {
+                    $domainTable.append(`
+                        &lt;tr class="${cssClass}">
+                            &lt;td class="url-td">&lt;a target="_blank" href="${url}" title="view links ${author} recently submitted from '${domain}'">${domain}&lt;/a>&lt;/td>
+                            &lt;td class="count-td">${domainCount}&lt;/td>
+                            &lt;td class="percentage-td">${percentage}%&lt;/td>
+                        &lt;/tr>
+                    `);
+                });
+
+                // Append the first 20 domains to the report comment
+                if (index &lt; 20) {
+                    commentBody += `\n[${domain}](${url})|${domainCount}|${percentage}%`;
+                }
+                moreDomains = index;
+            });
+
+            // If there were 20 or more domains, append to the report comment that we only displayed 20
+            if (moreDomains >= 20) {
+                commentBody += `\n\n_^...and ^${user.domainList.length - 20} ^more_`;
+            }
+
+            commentBody += '\n\nsubreddit submitted to|count|%\n:-|-:|-:';
+
+            // Sort subreddit list by count
+            user.subredditList.sort((a, b) => user.subreddits.submissions[b].count - user.subreddits.submissions[a].count);
+
+            // Empty the subreddit table
+            $subredditTable.empty();
+
+            // Get the total count of subreddit submissions
+            let totalSubredditCount = 0;
+            for (const subreddit of Object.keys(user.subreddits.submissions)) {
+                totalSubredditCount += user.subreddits.submissions[subreddit].count;
+            }
+
+            // Append a list of subreddits submitted to the subreddit table and to the comment body for reports
+            user.subredditList.forEach((subreddit, index) => {
+                const subredditCount = user.subreddits.submissions[subreddit].count,
+                      subredditKarma = user.subreddits.submissions[subreddit].karma,
+                      url = TBUtils.link(`/r/${subreddit}/search?q=author%3A${author}&amp;restrict_sr=on&amp;sort=new&amp;feature=legacy_search`),
+                      percentage = Math.round(subredditCount / totalSubredditCount * 100);
+
+                let cssClass = '';
+                if (percentage >= 10 &amp;&amp; subredditCount > 4) {
+                    cssClass = percentage >= 20 ? 'tb-history-row-danger' : 'tb-history-row-warning';
+                }
+                if (subreddit === thisSubreddit) {
+                    cssClass += ' tb-history-row-current-subreddit';
+                }
+
+                requestAnimationFrame(() => {
+                    $subredditTable.append(`
+                        &lt;tr class="${cssClass}">
+                            &lt;td class="url-td">&lt;a target="_blank" href="${url}" title="view links ${author} recently submitted to /r/${subreddit}/">${subreddit}&lt;/a>&lt;/td>
+                            &lt;td class="count-td">${subredditCount}&lt;/td>
+                            &lt;td class="percentage-td">${percentage}%&lt;/td>
+                            &lt;td class="karma-td">${subredditKarma}&lt;/td>
+                        &lt;/tr>
+                    `);
+                });
+
+                if (index &lt; 20) {
+                    commentBody += `\n[${subreddit}](${url})|${subredditCount}|${percentage}%`;
+                }
+            });
+
+            // If there were more than 20 subreddits, we only put the first 20 in the report, and say that there are more
+            if (moreDomains >= 20) {
+                commentBody += `\n\n_^...and ^${user.subredditList.length - 20} ^more_`;
+            }
+
+            $rtsLink.attr('data-commentbody', commentBody);
+
+            tableify(); // TODO: why is this another function? What does it actually do?
+        });
+
+        function tableify () {
+            // Get the total account of account submissions
+            $accountTable.empty();
+
+            const accountList = [];
+
+            for (const account of Object.keys(user.accounts)) {
+                accountList.push(account);
+            }
+
+            // Sort the domains by submission count
+            accountList.sort((a, b) => user.accounts[b].count - user.accounts[a].count);
+
+            accountList.forEach(account => {
+                account = user.accounts[account];
+                const percentage = Math.round(account.count / user.counters.submissions * 100);
+                let cssClass = '';
+                if (percentage >= 10 &amp;&amp; account.count > 4) {
+                    cssClass = percentage >= 20 ? 'tb-history-row-danger' : 'tb-history-row-warning';
+                }
+
+                requestAnimationFrame(() => {
+                    $accountTable.append(`
+                        &lt;tr class="${cssClass}">
+                            &lt;td class="url-td">
+                                &lt;a href="${account.url}" target="_blank">${account.name}&lt;/a> - &lt;a href="${account.provider_url}" target="_blank">${account.provider}&lt;/a>
+                            &lt;/td>
+                            &lt;td class="count-td">${account.count}&lt;/td>
+                            &lt;td class="percentage-td">${percentage}%&lt;/td>
+                        &lt;/tr>
+                    `);
+                });
+            });
+        }
+
+        /**
+         * Take an object and add it to `self.accounts`.
+         *
+         * @param details {Object}
+         */
+        function addAccount (details) {
+            details.url = details.url.replace('https://', 'http://');
+            if (!user.accounts[details.url]) {
+                user.accounts[details.url] = details;
+                user.accounts[details.url].count = 0;
+            }
+            user.accounts[details.url].count++;
+        }
+
+        /**
+         * Generate a `details` object that mimics the oembed object to be passed to `addAccount()`.
+         *
+         * @param spec {Object} from domainSpecs
+         * @param url {String}
+         * @returns {Object|undefined}
+         */
+        function getDomainDetails (spec, url) {
+            // cache the dynamic rx's
+            if (!spec.rx) {
+                if (spec.type === TYPE.PATH) {
+                    spec.rx = new RegExp(`${spec.domain}/${spec.path || ''}([\\w-@]+)`);
+                } else if (spec.type === TYPE.SUBDOMAIN) {
+                    spec.rx = new RegExp(`://([\\w-]+).${spec.domain}`);
+                }
+            }
+
+            const match = url.match(spec.rx),
+                  author = match &amp;&amp; match[1];
+            let scheme, author_url, provider_url;
+
+            if (author) {
+                scheme = `${url.split('://')[0]}://`;
+                provider_url = `${scheme + spec.domain}/`;
+
+                if (spec.type === TYPE.PATH) {
+                    author_url = provider_url + (spec.path || '') + author;
+                } else if (spec.type === TYPE.SUBDOMAIN) {
+                    author_url = `${scheme + author}.${spec.domain}`;
+                }
+
+                return {
+                    name: author,
+                    provider: spec.provider,
+                    provider_url,
+                    url: author_url,
+                };
+            }
+        }
+    };
+
+    self.populateCommentHistory = function (after, author, thisSubreddit) {
+        TB.ui.longLoadNonPersistent(true);
+
+        const user = self.fetched[author],
+              $contentBox = user.popup,
+              $commentCount = $contentBox.find('.comment-count'),
+              $commentCountOp = $contentBox.find('.comment-count-OP'),
+              $commentTable = $contentBox.find('.comment-table tbody');
+
+        $commentTable.empty();
+
+        $contentBox.find('.comment-table').show();
+        $contentBox.find('.tb-history-comment-stats').show();
+        $commentTable.append(`&lt;tr>&lt;td colspan="6" class="error">Loading... (${user.counters.comments})&lt;/td>&lt;/tr>`);
+
+        TBUtils.getJSON(`/user/${author}/comments.json`, {
+            after,
+            sort: 'new',
+            limit: 100,
+        }).catch(() => {
+            $commentTable.find('.error').html('unable to load userdata &lt;br /> shadowbanned?');
+            TB.ui.longLoadNonPersistent(false);
+        }).then(d => {
+            TBStorage.purifyObject(d);
+            $.each(d.data.children, (index, value) => {
+                const data = value.data;
+
+                if (!user.subreddits.comments[data.subreddit]) {
+                    user.subreddits.comments[data.subreddit] = {count: 0};
+                    user.commentSubredditList.push(data.subreddit);
+                }
+
+                user.subreddits.comments[data.subreddit].count++;
+                user.counters.comments++;
+
+                if (data.link_author === data.author) {
+                    user.counters.commentsOP++;
+                }
+            });
+
+            const after = d.data.after;
+
+            if (after &amp;&amp; user.counters.comments &lt; Number(self.setting('commentCount'))) {
+                self.populateCommentHistory(after, author, thisSubreddit);
+            }
+
+            user.commentSubredditList.sort((a, b) => user.subreddits.comments[b].count - user.subreddits.comments[a].count);
+
+            $commentTable.empty();
+
+            user.commentSubredditList.forEach(subreddit => {
+                const count = user.subreddits.comments[subreddit].count,
+                      percentage = Math.round(count / user.counters.comments * 100);
+
+                let cssClass = '';
+                if (subreddit === thisSubreddit) {
+                    cssClass += ' tb-history-row-current-subreddit';
+                }
+
+                requestAnimationFrame(() => {
+                    $commentTable.append(`
+                        &lt;tr class="${cssClass}">
+                            &lt;td>${subreddit}&lt;/td>&lt;td>${count}&lt;/td>&lt;td>${percentage}&lt;/td>
+                        &lt;/tr>
+                    `);
+                });
+            });
+            // `|| 0` to handle NaN
+            const percentageOP = Math.round(user.counters.commentsOP / user.counters.comments * 100) || 0;
+
+            $commentCount.html(TBStorage.purify(user.counters.comments));
+            $commentCountOp.html(TBStorage.purify(`${user.counters.commentsOP} (${percentageOP}%)`));
+
+            TB.ui.longLoadNonPersistent(false);
+        });
+    };
+
+    /**
+ * Report the use to /r/spam
+ */
+    self.reportAuthorToSpam = function (author) {
+        const user = self.fetched[author],
+              $contentBox = user.popup,
+              rtsComment = self.setting('rtsComment'),
+              $rtsLink = $contentBox.find('.rts-report'),
+              rtsNativeLink = $rtsLink.get(0),
+              commentBody = rtsNativeLink.getAttribute('data-commentbody');
+
+        rtsNativeLink.textContent = 'Submitting...';
+        rtsNativeLink.className = '.rts-report-clicked';
+
+        // Submit to RTS
+        const link = `https://www.reddit.com/user/${author}`,
+              title = `Overview for ${author}`;
+
+        TBUtils.postLink(link, title, self.SPAM_REPORT_SUB, (successful, submission) => {
+            if (!successful) {
+                $rtsLink.after(`&lt;span class="error" style="font-size:x-small; cursor: default;">an error occurred: ${submission[0][1]}&lt;/span>`);
+            // $rtsLink.hide();
+            } else {
+                if (submission.json.errors.length) {
+                    $rtsLink.after(`&lt;span class="error" style="font-size:x-small">${submission.json.errors[0][1]}&lt;/error>`);
+                    // $rtsLink.hide();
+                    if (submission.json.errors[0][0] === 'ALREADY_SUB') {
+                        rtsNativeLink.href = TBUtils.link(`/r/${self.SPAM_REPORT_SUB}/search?q=http%3A%2F%2Fwww.reddit.com%2Fuser%2F${author}&amp;restrict_sr=on&amp;feature=legacy_search`);
+                    }
+                    return;
+                }
+
+                // Post stats as a comment.
+                if (!commentBody.length || !rtsComment) {
+                    rtsNativeLink.textContent = 'reported';
+                    rtsNativeLink.href = submission.json.data.url;
+                    rtsNativeLink.className = 'tb-general-button';
+                    return;
+                }
+
+                TBUtils.postComment(submission.json.data.name, commentBody, (successful, comment) => {
+                    if (!successful) {
+                        $rtsLink.after(`&lt;span class="error" style="font-size:x-small; cursor: default;">an error occurred. ${comment[0][1]}&lt;/span>`);
+                    // $rtsLink.hide();
+                    } else {
+                        if (comment.json.errors.length) {
+                            $rtsLink.after(`&lt;span class="error" style="font-size:x-small; cursor: default;">${comment.json.errors[1]}&lt;/error>`);
+                            // $rtsLink.hide();
+                            return;
+                        }
+                        rtsNativeLink.textContent = 'reported';
+                        rtsNativeLink.href = submission.json.data.url;
+                        rtsNativeLink.className = 'tb-general-button';
+                    }
+                });
+            }
+        });
+    };
+
+    TB.register_module(self);
+}
+
+window.addEventListener('TBModuleLoaded', () => {
+    historybutton();
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Oct 16 2019 13:50:10 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
