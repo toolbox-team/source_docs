@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>ProfilePro - Documentation</title>
+    <title>TBCore - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">ProfilePro</h1>
+    <h1 class="page-title">TBCore</h1>
     
 
     
@@ -44,6 +44,9 @@
 
 <header>
     
+        <h2>
+        TBCore
+        </h2>
         
     
 </header>
@@ -52,6 +55,51 @@
     
         <div class="container-overview">
         
+            
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
             
 
             
@@ -72,6 +120,83 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".baseDomain"><span class="type-signature">(static) </span>baseDomain<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    If we are on new modmail we use www.reddit.com for all other instances we use whatever is the current domain. Used because some browsers do not like relative urls in extensions
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -81,7 +206,7 @@
 
     
 
-    <h4 class="name" id="~addModSubsToSidebar"><span class="type-signature">(inner) </span>addModSubsToSidebar<span class="signature">(user, $sidebar)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".alert"><span class="type-signature">(static) </span>alert<span class="signature">(options, callback)</span><span class="type-signature"> &rarr; {callback}</span></h4>
 
     
 
@@ -93,7 +218,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line241">line 241</a>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line579">line 579</a>
     </li></ul></dd>
     
 
@@ -133,7 +258,8 @@
 
 
 <div class="description">
-    Adds the user's moderated subs to the given sidebar element.
+    Opens the toolbox "nag" alert everyone loves so much.
+USE SPARINGLY
 </div>
 
 
@@ -167,1232 +293,6 @@
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>user</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">reddit username</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$sidebar</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">jqueryObject</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">jquery sidebar element to which the subreddits need to be added</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~addToSiteTable"><span class="type-signature">(inner) </span>addToSiteTable<span class="signature">(data, $siteTable, after, callback)</span><span class="type-signature"> &rarr; {callback}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line127">line 127</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Adds items to the toolbox profile overlay siteTable element
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">array of reddit things to be added in reddit API format</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$siteTable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">jqueryObject</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">jquery object representing the siteTable</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>after</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">reddit thing ID representing the start of the next page. If present will add a "load more" at the end of the siteTable</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">callback</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">callback function</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    returned when done
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">callback</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~addTrophiesToSidebar"><span class="type-signature">(inner) </span>addTrophiesToSidebar<span class="signature">(user, $sidebar)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line197">line 197</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Adds the user's trophies to the given sidebar element.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>user</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">reddit username</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$sidebar</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">jqueryObject</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">jquery sidebar element to which the trophies need to be added</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~filterModdable"><span class="type-signature">(inner) </span>filterModdable<span class="signature">(hide)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line102">line 102</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Will hide or reveal items in the profile overlay that can't be modded.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>hide</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">determines if items should be shown or hidden.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~hideModActionsThings"><span class="type-signature">(inner) </span>hideModActionsThings<span class="signature">(hide)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line76">line 76</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Will hide or reveal mod actions in the toolbox profile overlay.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>hide</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">determines if actions should be shown or hidden.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~makeUserSidebar"><span class="type-signature">(inner) </span>makeUserSidebar<span class="signature">(user, $overlay)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line307">line 307</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Creates a user sidebar element for the given overlay
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>user</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">reddit username</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$overlay</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">jqueryObject</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">jquery overlay element to which the sidebar needs to be added</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~regExpEscape"><span class="type-signature">(inner) </span>regExpEscape<span class="signature">(query)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line436">line 436</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Escapes a string so it is suitable to be inserted in to a regex match
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>query</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">reddit username</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    string escaped for regex use
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~searchProfile"><span class="type-signature">(inner) </span>searchProfile<span class="signature">(user, type, sortMethod, $siteTable, options, after, match, pageCount, callback)</span><span class="type-signature"> &rarr; {callback}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_profile.js.html">modules/profile.js</a>, <a href="modules_profile.js.html#line343">line 343</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Searches a user profile for the given subreddit and/or string
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>user</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">reddit username</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the listing type that is to be searched</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sortMethod</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the listing type that is to be searched</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$siteTable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">jqueryObject</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">jquery siteTable element to which the search results need to be added</td>
-        </tr>
-
     
 
         <tr>
@@ -1413,14 +313,33 @@
 
             
 
-            <td class="description last">search options</td>
-        </tr>
+            <td class="description last">The options for the alert
+                <h6>Properties</h6>
+                
 
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>after</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
@@ -1436,14 +355,37 @@
 
             
 
-            <td class="description last">reddit thing id indicating the next page</td>
+            <td class="description last">The text of the alert</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>match</code></td>
+                <td class="name"><code>noteID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The ID of the note we're displaying</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showClose</code></td>
             
 
             <td class="type">
@@ -1459,30 +401,14 @@
 
             
 
-            <td class="description last">indicates if there are previous</td>
+            <td class="description last">Whether to show a close button</td>
         </tr>
 
     
+    </tbody>
+</table>
 
-        <tr>
-            
-                <td class="name"><code>pageCount</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
             </td>
-
-            
-
-            
-
-            <td class="description last">what page we are on</td>
         </tr>
 
     
@@ -1531,7 +457,7 @@
 
         
 <div class="param-desc">
-    returns true when results have been found, false when none are found
+    callback with true or false in parameter which will be called when the alert is closed.
 </div>
 
 
@@ -1553,8 +479,1293 @@
 
 
         
+            
+
     
 
+    <h4 class="name" id=".debugInformation"><span class="type-signature">(static) </span>debugInformation<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="TBCore.html#.debugObject">TBCore.debugObject</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line430">line 430</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Puts important debug information in a object so we can easily include it in /r/toolbox posts and comments when people need support.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Object with debug information
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="TBCore.html#.debugObject">TBCore.debugObject</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getToolboxDevs"><span class="type-signature">(static) </span>getToolboxDevs<span class="signature">()</span><span class="type-signature"> &rarr; {array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line556">line 556</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Fetches the toolbox dev from /r/toolbox or falls back to a predefined list.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    List of toolbox devs
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isConfigValidVersion"><span class="type-signature">(static) </span>isConfigValidVersion<span class="signature">(config, subreddit)</span><span class="type-signature"> &rarr; {booleean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line533">line 533</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Checks if a given subreddit config version is valid with this version of toolbox
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subreddit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    valid
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">booleean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".link"><span class="type-signature">(static) </span>link<span class="signature">(link)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line428">line 428</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Takes an absolute path for a link and prepends the www.reddit.com
+domain if we're in new modmail (mod.reddit.com). Makes absolute path
+links work everywhere.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>link</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The link path, starting with "/"</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".notification"><span class="type-signature">(static) </span>notification<span class="signature">(title, body, path, markreadid<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line676">line 676</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Shows a notification, uses native browser notifications if the user
+allows it or falls back on html notifications.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Notification title</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Body text</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Absolute path to be opend when clicking the
+notification</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>markreadid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The ID of a conversation to mark as read
+when the notification is clicked</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updateCache"><span class="type-signature">(static) </span>updateCache<span class="signature">(cacheNAme, value, subreddit)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line259">line 259</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Updates in page cache and background page.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cacheNAme</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the cache to be written.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the cache value to be updated</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subreddit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">when present cache is threated as an object and the value will be written to subreddit property. If missing the value is pushed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id=".debugObject">debugObject</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tbcore.js.html">tbcore.js</a>, <a href="tbcore.js.html#line407">line 407</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>toolboxVersion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The toolbox version</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>browser</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Browser used (Firefox, Chrome, etc)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>browserVersion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The version of the browser</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>platformInformation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Other platform information</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>betaMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">toolbox beta mode enabled</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>debugMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">toolbox debugMode enabled</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>compactMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">toolbox compactmode enabled</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>advancedSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">toolbox advanced settings enabled</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cookiesEnabled</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Browser cookies enabled</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
     
 
     
