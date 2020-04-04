@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>modules/newmodmailpro.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,96 +34,283 @@
 
 <div id="main">
     
+    <h1 class="page-title">modules/newmodmailpro.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+function newmodmailpro () {
+    const self = new TB.Module('New Mod Mail Pro');
+    self.shortname = 'NewModMail';
 
+    // //Default settings
+    self.settings['enabled']['default'] = true;
+    self.config['betamode'] = false;
 
-    <section class="package">
-        <h3> </h3>		
-    </section>
+    self.register_setting('modmaillink', {
+        type: 'selector',
+        values: ['All modmail', 'New', 'In Progress', 'Archived', 'Highlighted', 'Mod Discussions', 'Notifications'],
+        default: 'all_modmail',
+        title: 'Change the modmail link to open a different modmail view by default.',
+    });
 
+    self.register_setting('openmailtab', {
+        type: 'boolean',
+        default: true,
+        title: 'Open modmail in a new tab.',
+    });
 
+    self.register_setting('lastreplytypecheck', {
+        type: 'boolean',
+        default: true,
+        title: 'Warns you if you reply as yourself but the last reply type is a private mod note or a "as subreddit" reply. ',
+    });
 
+    self.register_setting('modmailnightmode', {
+        type: 'boolean',
+        default: false,
+        title: 'Open modmail in nightmode',
+    });
 
+    self.register_setting('searchhelp', {
+        type: 'boolean',
+        default: true,
+        title: 'Add button next to search that opens a help popup explaining all search options.',
+    });
 
+    self.register_setting('noReplyAsSelf', {
+        type: 'boolean',
+        default: false,
+        advanced: true,
+        title: 'Automatically switch "reply as" selection away from "Reply as myself" to "Reply as subreddit".',
+    });
 
+    self.register_setting('showModmailPreview', {
+        type: 'boolean',
+        default: true,
+        title: 'Show a preview of modmail messages while typing.',
+    });
 
+    self.register_setting('clickableReason', {
+        type: 'boolean',
+        default: true,
+        title: 'Make links in ban and mute reasons clickable.',
+    });
 
+    const $body = $('body');
 
-    
+    function switchAwayFromReplyAsSelf () {
+        const current = $('.ThreadViewerReplyForm__replyOptions .FancySelect__valueText').text();
+        if (current === 'Reply as myself') {
+            $body.find('.FancySelect__value').click();
+            $body.find('.FancySelect__option:contains("Reply as the subreddit")').click();
+        }
+    }
 
+    /**
+     * Searches for ban reason elements on page and makes included links clickable.
+     * @function
+     */
+    function reasonClickable () {
+        const $reasons = $body.find('.InfoBar__banText:not(.tb-reason-seen), .InfoBar__muteText:not(.tb-reason-seen)');
+        if ($reasons.length) {
+            $reasons.each(function () {
+                const $reason = $(this);
+                $reason.addClass('tb-reason-seen');
 
+                let reasonText = $reason.text();
+                // Three regex passes to avoid silly logic about whole urls, urls starting with a slash and those without it.
+                reasonText = reasonText.replace(/(\s|'|^)(https:\/\/.+?)(\s|'|$)/gi, '$1&lt;a href="$2" target="_blank">$2&lt;/a>$3');
+                reasonText = reasonText.replace(/(\s|'|^)(\/u\/.+?|\/user\/.+?|\/r\/.+?)(\s|'|$)/gi, '$1&lt;a href="https://www.reddit.com$2" target="_blank">$2&lt;/a>$3');
+                reasonText = reasonText.replace(/(\s|'|^)(u\/.+?|user\/.+?|r\/.+?)(\s|'|$)/gi, '$1&lt;a href="https://www.reddit.com/$2" target="_blank">$2&lt;/a>$3');
 
-    <section class="readme">
-        <article><h1>Contributor guidelines</h1>
-<p>Thinking about contributing to toolbox? Awesome! Here is some information to get you started!</p>
-<h2>Reporting bugs</h2>
-<p>We ask that you first make a post in the <a href="https://www.reddit.com/r/toolbox">/r/toolbox</a> subreddit before submitting an issue here. This in order to keep clutter out of the issues on github as much as possible.</p>
-<h2>Contributing documentation</h2>
-<p>You don't need to be a programmer to contribute! User documentation is something that can almost always be improved. So if you want to contribute and can't contribute code have a look at the <a href="https://www.reddit.com/r/toolbox/wiki">/r/toolbox documentation pages</a></p>
-<h2>Contributing code</h2>
-<p>New contributions to toolbox are always welcome, there are some guidelines we ask you to follow.</p>
-<h3>Code/Programming style guidelines</h3>
-<p>Since toolbox is a project that receives contributions from multiple people from various programming backgrounds it is important to be aware of style conventions. Our programming style guidelines aim is to make it easier for someone who starts work on toolbox to familiarize themselves with the style conventions agreed upon in toolbox.</p>
-<p>The document can be found <a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki/Programming-style-guide">in this wiki article</a>.</p>
-<h3>Contributing completely new functionality</h3>
-<p>We welcome new functionality, however it is always possible that someone is already working on something you have thought up or that we have not implemented something deliberately. So if you are considering coding new functionality it is always a good idea to first check. Simply make an issue here on GitHub or <a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki/Contacting-the-toolbox-team">contact the team on Discord or IRC</a></p>
-<h3>Existing utility functions</h3>
-<p>We have a lot of utility functions in toolbox ready to be used for background operations as well as interface building. So when you need a specific sort of function it is always a good idea make sure to check if it does not already exist.</p>
-<p>You can find the documentation for all this on the following locations:</p>
-<ul>
-<li><a href="https://toolbox-team.github.io/source-docs/">JSDoc source code documentation</a> Note: Not yet entirely complete, more documentation for code is an ongoing effort.</li>
-<li><a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki/Toolbox-Module-Structure">Toolbox module documentation</a> details how the general toolbox module structure works.</li>
-<li>Team members on Discord. We try to keep the documentation updated but it very much is a work in progress. So when things are unclear don't be afraid to simply ask.</li>
-</ul>
-<h2>Project structure</h2>
-<ul>
-<li><code>/</code>: root directory containing scripting for building toolbox and configuration for development related things (linting, git configuration files).</li>
-<li><code>extension/</code>: root directory of the extension itself. Contains the manifests. From here the unpacked extension can be loaded for development.</li>
-<li><code>extension/data/</code>: Directory containing the functional code of toolbox. All files starting with <code>tb</code> are toolbox core scripts.</li>
-<li><code>extension/data/tbmodule.js</code>: Modules are loaded into toolbox through this.</li>
-<li><code>extension/data/tbstorage.js</code>: Everything storage related.</li>
-<li><code>extension/data/tbui.js</code>: Handles creating UI elements.</li>
-<li><code>extension/data/tbhelpers.js</code>: Contains standalone utility functions. Public functions all are part of the <code>TBHelpers</code> object.</li>
-<li><code>extension/data/tbapi.js</code>: Contains reddit api utility functions. Public functions all are part of the <code>TBApi</code> object.</li>
-<li><code>extension/data/tbcore.js</code>: TBCore is one of the core blocks on which toolbox is build. It contains a lot of information about the state of toolbox and reddit.</li>
-<li><code>extension/data/background/</code>: Contains extension background scripts</li>
-<li><code>extension/data/images/</code>: Images used by toolbox.</li>
-<li><code>extension/data/libs/</code>: Contains javascript libraries used by toolbox</li>
-<li><code>extension/data/modules/</code>: Contains the individual toolbox modules.</li>
-<li><code>extension/data/styles/</code>: Contains all CSS</li>
-</ul>
-<h2>Building</h2>
-<p>Building is only needed if you want to test in Firefox as the build process makes some changes to <code>extension/manifest.json</code> for firefox. For Chrome and other chromium based browsers the building steps below are not needed.</p>
-<p>Building the extension is relatively easy through <a href="https://nodejs.org/en/">Node.js</a>.</p>
-<pre class="prettyprint source lang-sh"><code>$ npm install          # Install dependencies
-$ npm run build        # Build extension .zip files for Chrome and Firefox
-$ npm run build-watch  # Automatically rebuild on file changes
-$ npm run docs         # Build documentation of internal interfaces
+                $reason.html(reasonText);
+            });
+        }
+    }
+    // All stuff we want to do when we are on new modmail
+    if (TBCore.isNewModmail) {
+        // Add a class to body
+        $body.addClass('tb-new-modmail');
+        const parser = SnuOwnd.getParser(SnuOwnd.getRedditRenderer());
+
+        // ready some variables.
+        const modMailNightmode = self.setting('modmailnightmode'),
+              lastReplyTypeCheck = self.setting('lastreplytypecheck'),
+              searchhelp = self.setting('searchhelp'),
+              noReplyAsSelf = self.setting('noReplyAsSelf'),
+              showModmailPreview = self.setting('showModmailPreview'),
+              clickableReason = self.setting('clickableReason');
+
+        if (noReplyAsSelf) {
+            window.addEventListener('TBNewPage', event => {
+                if (event.detail.pageType === 'modmailConversation') {
+                    setTimeout(() => {
+                        switchAwayFromReplyAsSelf();
+                    }, 1000);
+                }
+            });
+        }
+
+        if (showModmailPreview) {
+            $body.on('input', '.ThreadViewerReplyForm__replyText, .NewThread__message', TBHelpers.debounce(e => {
+                let $previewArea;
+                if ($('#tb-modmail-preview').length) {
+                    $previewArea = $('#tb-modmail-preview');
+                } else {
+                    $previewArea = $('&lt;div id="tb-modmail-preview" class="StyledHtml">&lt;/div>');
+                    $('form.ThreadViewerReplyForm, form.NewThread__form').after($previewArea);
+                }
+                const renderedHTML = parser.render(TBStorage.purify(e.target.value));
+                $previewArea.html(`
+                &lt;h3 class="tb-preview-heading">Preview&lt;/h3>
+                &lt;div class="md">
+                    ${renderedHTML}
+                &lt;/div>
+                `);
+                $body.one('click', '.ThreadViewerReplyForm__replyButton, .NewThread__submitButton', () => {
+                    $previewArea.remove();
+                });
+            }, 100));
+        }
+
+        if (searchhelp) {
+            const $header = $body.find('.Header');
+            const $helpButton = $('&lt;a href="javascript:;" class="tb-search-help tb-bracket-button" title="Open help popup" style="">?&lt;/a>').appendTo($header);
+            const $searchButton = $body.find('.Search__button');
+
+            let helpButtonLeft = $searchButton.offset().left - 28;
+
+            $helpButton.css({
+                left: `${helpButtonLeft}px`,
+            });
+
+            $(window).on('resize', () => {
+                helpButtonLeft = $searchButton.offset().left - 28;
+
+                $helpButton.css({
+                    left: `${helpButtonLeft}px`,
+                });
+            });
+
+            $helpButton.on('click', e => {
+                e.preventDefault();
+                window.open('https://mods.reddithelp.com/hc/en-us/articles/360018564511', '', 'width=500,height=600,location=0,menubar=0,top=100,left=100');
+            });
+        }
+
+        if (lastReplyTypeCheck &amp;&amp; TBCore.isNewMMThread) {
+            $body.on('click', '.ThreadViewerReplyForm__replyButton', event => {
+                // Get all mod replies and see if they are something we need to warn the user about.
+                const $lastReply = $body.find('.Thread__messages .Thread__message:has(.m-mod)').last();
+                const replyTypeMyself = $body.find('.FancySelect__valueText').text() === 'Reply as myself';
+
+                // if it finds this the last mod that replied did so with "as subreddit".
+                if ($lastReply.find('.icon-profile-slash').length &amp;&amp; replyTypeMyself) {
+                    if (confirm('The last mod that replied did so as the subreddit, are you sure you want to reply as yourself?')) {
+                        // Ok, do nothing and let the message be posted.
+                    } else {
+                        // Not ok, prevent the button from being clicked.
+                        event.preventDefault();
+                    }
+                }
+
+                // If it finds this class it means the last reply was a private mod note.
+                if ($lastReply.find('.Thread__messageIsMod').length &amp;&amp; replyTypeMyself) {
+                    if (confirm('The last mod that replied did so with a private mod note, are you sure you want to reply as yourself?')) {
+                        // Ok, do nothing and let the message be posted.
+                    } else {
+                        // Not ok, prevent the button from being clicked.
+                        event.preventDefault();
+                    }
+                }
+            });
+        }
+
+        if (modMailNightmode) {
+            // Let's make sure RES nightmode doesn't mess things up.
+            $('html, body').removeClass('res-nightmode');
+
+            // Now enable toolbox nightmode.
+            $('html').addClass('tb-nightmode');
+        }
+
+        if (clickableReason) {
+            $body.on('click', '.icon-user', () => {
+                setTimeout(() => {
+                    reasonClickable();
+                }, 500);
+            });
+
+            window.addEventListener('TBNewPage', event => {
+                if (event.detail.pageType === 'modmailConversation') {
+                    reasonClickable();
+                }
+            });
+        }
+    }
+
+    // Below all stuff we do when we are NOT on new modmail.
+    if (!TBCore.isNewModmail) {
+        // ready some variables.
+        const modmailLink = self.setting('modmaillink'),
+              openMailTab = self.setting('openmailtab');
+
+        // Let's mess around with the link to modmail.
+        const $newModmailLinkElement = $('#new_modmail'),
+              newModmailBaseUrl = 'https://mod.reddit.com/mail/';
+
+        // Open modmail in a new tab if the option is selected
+        if (openMailTab) {
+            $newModmailLinkElement.attr('target', '_blank');
+        }
+
+        // let's replace urls.
+        switch (modmailLink) {
+        case 'all_modmail':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}all`);
+
+            break;
+        case 'new':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}new`);
+
+            break;
+        case 'in_progress':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}inprogress`);
+
+            break;
+        case 'archived':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}archived`);
+
+            break;
+        case 'highlighted':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}highlighted`);
+
+            break;
+        case 'mod_discussions':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}mod`);
+
+            break;
+        case 'notifications':
+            $newModmailLinkElement.attr('href', `${newModmailBaseUrl}notifications`);
+        }
+    }
+
+    TB.register_module(self);
+}
+
+window.addEventListener('TBModuleLoaded', () => {
+    newmodmailpro();
+});
 </code></pre>
-<p>Once you've built a .zip for your platform, you're ready to test! Remember to reload the extension between builds.</p>
-<h2>Testing on Chrome</h2>
-<p><strong>Note:</strong> It is not needed to build for chrome as it can be run directly from source.</p>
-<ul>
-<li>Go to <code>chrome://extensions</code>.</li>
-<li>Check the &quot;Developer mode&quot; checkbox if it's not already checked.</li>
-<li>Click the &quot;Load unpacked extension...&quot; button.</li>
-<li>Load the <code>extension</code> directory.</li>
-</ul>
-<h2>Testing on Firefox (Developer or Nightly Editions)</h2>
-<ul>
-<li>Go to <code>about:addons</code>.</li>
-<li>Click the gear button.</li>
-<li>Click &quot;Install Add-On From File...&quot;.</li>
-<li>Load the <code>/build/toolbox_v&lt;version&gt;_firefox.zip</code> file.</li>
-</ul></article>
+        </article>
     </section>
-
-
 
 
 
