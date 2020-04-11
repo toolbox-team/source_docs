@@ -378,29 +378,7 @@ function queuetools () {
         &lt;span>
             &lt;a href="javascript:;" class="tb-general-button invert inoffensive" accesskey="I" title="invert selection">invert&lt;/a>
             &lt;a href="javascript:;" class="tb-general-button open-expandos inoffensive" title="toggle all expando boxes">[+]&lt;/a>
-            &lt;div class="tb-dropdown lightdrop">
-                &lt;a href="javascript:;" class="tb-general-button inoffensive select"> [select...]&lt;/a>
-            &lt;/div>
-            &lt;div class="tb-drop-choices lightdrop select-options">
-                ${viewingreports ? '' : `&lt;a class="choice inoffensive" href="javascript:;" type="banned">shadow-banned&lt;/a>
-                &lt;a class="choice inoffensive" href="javascript:;" type="filtered">spam-filtered&lt;/a>
-                ${viewingspam ? '' : '&lt;a class="choice inoffensive" href="javascript:;" type="reported">has-reports&lt;/a>'}`}
-                &lt;a class="choice dashed" href="javascript:;" type="spammed">[ spammed ]&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="removed">[ removed ]&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="approved">[ approved ]&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="ignored">[ reports ignored ]&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="actioned">[ actioned ]&lt;/a>
-                &lt;a class="choice dashed" href="javascript:;" type="domain">domain...&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="user">user...&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="title">title...&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="subreddit">subreddit...&lt;/a>
-                &lt;a class="choice dashed" href="javascript:;" type="comments">all comments&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="links">all submissions&lt;/a>
-                &lt;a class="choice dashed" href="javascript:;" type="self">self posts&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="flair">posts with flair&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="pointsgt">points >...&lt;/a>
-                &lt;a class="choice" href="javascript:;" type="pointslt">points &lt;...&lt;/a>
-            &lt;/div>
+            &lt;a href="javascript:;" class="tb-general-button inoffensive select"> [select...]&lt;/a>
             &amp;nbsp;
             &lt;a href="javascript:;" class="tb-general-button inoffensive unhide-selected" accesskey="U">unhide&amp;nbsp;all&lt;/a>
             &lt;a href="javascript:;" class="tb-general-button inoffensive hide-selected"   accesskey="H">hide&amp;nbsp;selected&lt;/a>
@@ -423,6 +401,72 @@ function queuetools () {
             &lt;/div>
         &lt;/span>
     &lt;/div>`);
+
+            let $closePopup = () => {};
+
+            $body.on('click', '.tb-general-button.select', function (event) {
+                // close popup if it exists
+                $closePopup();
+                const $this = $(this);
+                const $overlay = $this.closest('.tb-page-overlay');
+                const positions = TBui.drawPosition(event);
+                let $appendTo;
+                if ($overlay.length) {
+                    $appendTo = $overlay;
+                } else {
+                    $appendTo = $('body');
+                }
+                const popupSelectContent = `
+                &lt;div class="lightdrop select-options">
+                    &lt;h2>Types&lt;/h2>
+                    ${viewingreports ? '' : `&lt;p>&lt;label>&lt;input type="checkbox" class="choice inoffensive" name="banned" /> shadow-banned&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice inoffensive" name="filtered"/> spam-filtered&lt;/label>&lt;/p>
+                    ${viewingspam ? '' : '&lt;p>&lt;label>&lt;input type="checkbox" class="choice inoffensive" name="reported"/> reported&lt;/label>&lt;/p>'}`}
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="comments" /> comments&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="links" /> submissions&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="self" /> text posts&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="flair" /> posts with flair&lt;/label>&lt;/p>
+                    
+                    &lt;p class="divider">&lt;input type="text" class="choice tb-input" name="domain" placeholder="domain..." />&lt;/p>
+                    &lt;p>&lt;input type="text" class="choice tb-input" name="user" placeholder="user..." />&lt;/p>
+                    &lt;p>&lt;input type="text" class="choice tb-input" name="title" placeholder="title..." />&lt;/p>
+                    &lt;p>&lt;input type="text" class="choice tb-input" name="subreddit" placeholder="subreddit..." />&lt;/p>
+                    
+                    &lt;h2 class="divider">Conditional&lt;/h2>
+                    &lt;p>&lt;input type="text" class="choice tb-input" name="pointsgt" placeholder="points >..." />&lt;/p>
+                    &lt;p>&lt;input type="text" class="choice tb-input" name="pointslt" placeholder="points &lt;..." />&lt;/p>
+
+                    &lt;h2 class="divider">Acted on&lt;/h2>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice dashed" name="spammed"/> [ spammed ]&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="removed" /> [ removed ]&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="approved" /> [ approved ]&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="ignored" /> [ reports ignored ]&lt;/label>&lt;/p>
+                    &lt;p>&lt;label>&lt;input type="checkbox" class="choice" name="actioned" /> [ actioned ]&lt;/label>&lt;/p>
+                &lt;/div>`;
+
+                const $popup = TB.ui.popup({
+                    title: 'Select items',
+                    tabs: [
+                        {
+                            title: 'Tab1',
+                            tooltip: 'NA',
+                            content: popupSelectContent,
+                            footer: '&lt;input class="select-queue-tools tb-action-button" type="button" value="Select items" />',
+                        },
+                    ],
+                    cssClass: 'queuetools-select-popup',
+                    draggable: true,
+                }).appendTo($appendTo)
+                    .css({
+                        left: positions.leftPosition,
+                        top: positions.topPosition,
+                        display: 'block',
+                    });
+                $closePopup = () => {
+                    $popup.remove();
+                };
+                $popup.on('click', '.close', $closePopup);
+            });
 
             $body.on('click', '.tb-dropdown:not(.active)', e => {
                 e.stopPropagation();
@@ -563,72 +607,82 @@ function queuetools () {
             });
 
             // Select/deselect certain things
-            $('.select-options a').click(function () {
-                const things = $('.thing:visible');
-                let selector;
-
-                switch (this.type) {
-                case 'banned':
-                    selector = '.banned-user';
-                    break;
-                case 'filtered':
-                    selector = '.spam:not(.banned-user)';
-                    break;
-                case 'reported':
-                    selector = ':has(.reported-stamp)';
-                    break;
-                case 'spammed':
-                    selector = '.spammed,:has(.pretty-button.negative.pressed),:has(.remove-button:contains(spammed))';
-                    break;
-                case 'removed':
-                    selector = '.removed,:has(.pretty-button.neutral.pressed),:has(.remove-button:contains(removed))';
-                    break;
-                case 'approved':
-                    selector = '.approved,:has(.approval-checkmark,.pretty-button.positive.pressed),:has(.approve-button:contains(approved))';
-                    break;
-                case 'ignored':
-                    selector = ':has(.pretty-button.pressed[data-event-action*="ignorereports"])'; // could be "ignorereports" or "unignorereports", hence the *=
-                    break;
-                case 'actioned':
-                    selector = `.flaired,.approved,.removed,.spammed,:has(.approval-checkmark,.pretty-button.pressed),
-                            :has(.remove-button:contains(spammed)),:has(.remove-button:contains(removed)),:has(.approve-button:contains(approved))`;
-                    break;
-                case 'domain':
-                    selector = `:has(.domain:contains(${prompt('domain contains:', '').toLowerCase()}))`;
-                    break;
-                case 'user':
-                    selector = `:has(.author:contains(${prompt('username contains:\n(case sensitive)', '')}))`;
-                    break;
-                case 'title':
-                    selector = `:has(a.title:contains(${prompt('title contains:\n(case sensitive)', '')}))`;
-                    break;
-                case 'subreddit':
-                    selector = `:has(a.subreddit:contains(${prompt('subreddit contains:\n(case sensitive)', '')}))`;
-                    break;
-                case 'comments':
-                    selector = '.comment';
-                    break;
-                case 'links':
-                    selector = '.link';
-                    break;
-                case 'self':
-                    selector = '.self';
-                    break;
-                case 'flair':
-                    selector = ':has(.linkflairlabel)';
-                    break;
-                case 'pointsgt': {
-                    const min = parseInt(prompt('points greater than:', ''));
-                    selector = (_, el) => $(el).find('.score.unvoted').attr('title') > min;
-                    break;
+            $body.on('click', '.select-queue-tools', () => {
+                // reset
+                const $things = $('.thing:visible');
+                const $selectOptions = $('.select-options input').filter((_, el) => el.type === 'checkbox' &amp;&amp; el.checked || el.type === 'text' &amp;&amp; el.value.length);
+                $things.find('input[type=checkbox]').prop('checked', false);
+                function selectThings () {
+                    const $this = $(this);
+                    let shouldSelect = null;
+                    $selectOptions.each((_, el) => {
+                        let selector = '', min, max;
+                        switch (el.name) {
+                        case 'banned':
+                            selector = '.banned-user';
+                            break;
+                        case 'filtered':
+                            selector = '.spam:not(.banned-user)';
+                            break;
+                        case 'reported':
+                            selector = ':has(.reported-stamp)';
+                            break;
+                        case 'spammed':
+                            selector = '.spammed,:has(.pretty-button.negative.pressed),:has(.remove-button:contains(spammed))';
+                            break;
+                        case 'removed':
+                            selector = '.removed,:has(.pretty-button.neutral.pressed),:has(.remove-button:contains(removed))';
+                            break;
+                        case 'approved':
+                            selector = '.approved,:has(.approval-checkmark,.pretty-button.positive.pressed),:has(.approve-button:contains(approved))';
+                            break;
+                        case 'ignored':
+                            selector = ':has(.pretty-button.pressed[data-event-action*="ignorereports"])'; // could be "ignorereports" or "unignorereports", hence the *=
+                            break;
+                        case 'actioned':
+                            selector = `.flaired,.approved,.removed,.spammed,:has(.approval-checkmark,.pretty-button.pressed),
+                                    :has(.remove-button:contains(spammed)),:has(.remove-button:contains(removed)),:has(.approve-button:contains(approved))`;
+                            break;
+                        case 'domain':
+                            selector = `:has(.domain:contains(${el.value.toLowerCase()}))`;
+                            break;
+                        case 'user':
+                            selector = `:has(.author:contains(${el.value}))`;
+                            break;
+                        case 'title':
+                            selector = `:has(a.title:contains(${el.value}))`;
+                            break;
+                        case 'subreddit':
+                            selector = `:has(a.subreddit:contains(${el.value}))`;
+                            break;
+                        case 'comments':
+                            selector = '.comment';
+                            break;
+                        case 'links':
+                            selector = '.link';
+                            break;
+                        case 'self':
+                            selector = '.self';
+                            break;
+                        case 'flair':
+                            selector = ':has(.linkflairlabel)';
+                            break;
+                        case 'pointsgt':
+                            min = parseInt(el.value);
+                            selector = (_, el) => $(el).find('.score.unvoted').attr('title') > min;
+                            break;
+                        case 'pointslt':
+                            max = parseInt(el.value);
+                            selector = (_, el) => $(el).find('.score.unvoted').attr('title') &lt; max;
+                            break;
+                        }
+                        shouldSelect = $this.is(selector);
+                        return shouldSelect !== false;
+                    });
+                    return shouldSelect;
                 }
-                case 'pointslt': {
-                    const max = parseInt(prompt('points less than:', ''));
-                    selector = (_, el) => $(el).find('.score.unvoted').attr('title') &lt; max;
-                    break;
-                }
-                }
-                things.filter(selector).find('input[type=checkbox]').prop('checked', true);
+                $things.filter(selectThings).find('input[type=checkbox]').prop('checked', true);
+                $closePopup();
             });
 
             $('.hide-selected').click(() => {
@@ -1445,7 +1499,7 @@ window.addEventListener('TBModuleLoaded', () => {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 08:32:32 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Apr 11 2020 08:33:37 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
