@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>background/messageHandling.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,94 +34,42 @@
 
 <div id="main">
     
+    <h1 class="page-title">background/messageHandling.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @var {Map&lt;string, function>} messageHandlers A map storing handlers for the
+ * various toolbox-defined message types
+ */
+export const messageHandlers = new Map();
 
+/**
+ * Handles a message
+ * @param {object} request The data sent to the background page
+ * @param {runtime.MessageSender} sender The sender of the message
+ * @returns {Promise&lt;any> | void}
+ */
+export function handleMessage (request, sender) {
+    const handler = messageHandlers.get(request.action);
+    if (handler) {
+        return Promise.resolve(handler(request, sender));
+    } else {
+        console.warn('Unknown message type:', request, sender);
+    }
+}
 
-    <section class="package">
-        <h3> </h3>		
-    </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1>Contributor guidelines</h1>
-<p>Thinking about contributing to toolbox? Awesome! We accept a variety of different types of contributions:</p>
-<h2>Issues and Ideas</h2>
-<p>We welcome bug reports and feature requests. Please submit those to <a href="https://www.reddit.com/r/toolbox">/r/toolbox</a> rather than creating a Github issue unless you've already talked to us about your issue or idea, to help us minimize clutter.</p>
-<h2>Documentation</h2>
-<p>Our <a href="https://www.reddit.com/r/toolbox/wiki">user documentation pages</a> can always use help, and contributing doesn't require coding knowledge! If you know how to use Toolbox and want to help the project, check out our docs wiki.</p>
-<p>We also accept edits to <a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki">our Github wiki</a>, which holds documentation for our internal processes and for third-party developers looking to integrate toolbox settings and data into their tools. Working on it will require a fair bit of techincal knowledge, but we welcome feedback and changes there as well.</p>
-<h2>Contributing Code</h2>
-<p>We review and accept pull requests for new features and bug fixes. Here's some information that will be useful for developers looking to get started:</p>
-<h3>Code/Programming style guidelines</h3>
-<p>Since toolbox is a project that receives contributions from multiple people from various programming backgrounds, it's important to be aware of style conventions. We have <a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki/Programming-style-guide">a dev wiki article</a> that explains some of our setup.</p>
-<h3>Contributing completely new functionality</h3>
-<p>We welcome new functionality, however it is always possible that someone is already working on something you have thought up or that we have not implemented something deliberately. So if you are considering coding new functionality it is always a good idea to first check. Simply make an issue here on GitHub or <a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki/Contacting-the-toolbox-team">contact the team on Discord or IRC</a>.</p>
-<h3>Existing utility functions</h3>
-<p>We have a lot of utility functions in toolbox ready to be used for background operations as well as interface building. So when you need a specific sort of function it is always a good idea make sure to check if it does not already exist.</p>
-<p>You can find the documentation for all this on the following locations:</p>
-<ul>
-<li><a href="https://toolbox-team.github.io/source-docs/">JSDoc source code documentation</a> Note: Not yet entirely complete, more documentation for code is an ongoing effort.</li>
-<li><a href="https://github.com/toolbox-team/reddit-moderator-toolbox/wiki/Toolbox-Module-Structure">Toolbox module documentation</a> details how the general toolbox module structure works.</li>
-<li>Team members on Discord. We try to keep the documentation updated but it very much is a work in progress. So when things are unclear don't be afraid to simply ask.</li>
-</ul>
-<h2>Project structure</h2>
-<ul>
-<li><code>/</code>: root directory containing scripting for building toolbox and configuration for development related things (linting, git configuration files).</li>
-<li><code>extension/</code>: root directory of the extension itself. Contains the manifests. From here the unpacked extension can be loaded for development.</li>
-<li><code>extension/data/</code>: Directory containing the functional code of toolbox. All files starting with <code>tb</code> are toolbox core scripts.</li>
-<li><code>extension/data/tbmodule.js</code>: Modules are loaded into toolbox through this.</li>
-<li><code>extension/data/tbstorage.js</code>: Everything storage related.</li>
-<li><code>extension/data/tbui.js</code>: Handles creating UI elements.</li>
-<li><code>extension/data/tbhelpers.js</code>: Contains standalone utility functions. Public functions all are part of the <code>TBHelpers</code> object.</li>
-<li><code>extension/data/tbapi.js</code>: Contains reddit api utility functions. Public functions all are part of the <code>TBApi</code> object.</li>
-<li><code>extension/data/tbcore.js</code>: TBCore is one of the core blocks on which toolbox is build. It contains a lot of information about the state of toolbox and reddit.</li>
-<li><code>extension/data/background/</code>: Contains extension background scripts</li>
-<li><code>extension/data/images/</code>: Images used by toolbox.</li>
-<li><code>extension/data/libs/</code>: Contains javascript libraries used by toolbox</li>
-<li><code>extension/data/modules/</code>: Contains the individual toolbox modules.</li>
-<li><code>extension/data/styles/</code>: Contains all CSS</li>
-</ul>
-<h2>Building, testing, and dev scripts</h2>
-<p>Building the extension is relatively easy through <a href="https://nodejs.org/en/">Node.js</a>. We use <a href="https://www.rollupjs.org/">Rollup</a> to bundle the extension's Javascript code and manually copy over assets including images and the <code>manifest.json</code> file via <a href="https://www.npmjs.com/package/rollup-plugin-copy">rollup-plugin-copy</a>. Additionally, some browser-specific processing is applied to the manifest to work around some browser-specific incompatibilities. Build output goes to <code>build/chrome</code> and <code>build/firefox</code>.</p>
-<pre class="prettyprint source lang-sh"><code>$ npm install          # Install dependencies
-$ npm run build        # Build extension
-$ npm run build:watch  # Automatically rebuild on file changes
-$ npm run docs         # Build documentation of internal interfaces
+// Listen for messages
+browser.runtime.onMessage.addListener(handleMessage);
 </code></pre>
-<p>Once you've built the extension, you can load it up in your browser for testing:</p>
-<h2>Testing on Chromium-Based browsers</h2>
-<ul>
-<li>Go to <code>chrome://extensions</code> (<code>edge://extensions</code>, etc.).</li>
-<li>Check the &quot;Developer mode&quot; checkbox if it's not already checked.</li>
-<li>Click the &quot;Load unpacked extension...&quot; button.</li>
-<li>Chromium asks for the extension directory, so load the <code>build/chrome</code> directory.</li>
-</ul>
-<h2>Testing on Firefox</h2>
-<ul>
-<li>Go to <code>about:debugging</code>.</li>
-<li>Click &quot;This Firefox&quot; in the sidebar.</li>
-<li>Click &quot;Load Temporary Add-on...&quot;.</li>
-<li>Firefox asks for a zip or the manifest file, so load the <code>build/firefox/manifest.json</code> file.</li>
-</ul></article>
+        </article>
     </section>
-
-
 
 
 
