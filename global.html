@@ -2659,7 +2659,7 @@ various toolbox-defined message types</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1857">line 1857</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1865">line 1865</a>
     </li></ul></dd>
     
 
@@ -6141,7 +6141,7 @@ shows if it was empty before adding, hides menu if it is empty after removing.</
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line779">line 779</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line787">line 787</a>
     </li></ul></dd>
     
 
@@ -12491,7 +12491,7 @@ fetching the list of moderated subs from the API.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_usernotes.js.html">modules/usernotes.js</a>, <a href="modules_usernotes.js.html#line1518">line 1518</a>
+        <a href="modules_usernotes.js.html">modules/usernotes.js</a>, <a href="modules_usernotes.js.html#line1517">line 1517</a>
     </li></ul></dd>
     
 
@@ -13043,7 +13043,7 @@ return a cached list or a static fallback if the API request fails.</p></li></ul
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line883">line 883</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line891">line 891</a>
     </li></ul></dd>
     
 
@@ -14872,7 +14872,7 @@ links work everywhere.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1697">line 1697</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1705">line 1705</a>
     </li></ul></dd>
     
 
@@ -15289,7 +15289,7 @@ boolean.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1332">line 1332</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1340">line 1340</a>
     </li></ul></dd>
     
 
@@ -15472,7 +15472,7 @@ Object can contain 'parentLink', 'contextLink' and 'fullCommentsLink' as boolean
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1027">line 1027</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1035">line 1035</a>
     </li></ul></dd>
     
 
@@ -16987,7 +16987,7 @@ when the notification is clicked</p></td>
 
     
 
-    <h4 class="name" id="overlay"><span class="type-signature"></span>overlay<span class="signature">(title, tabs, buttons, css_class, single_footer, details, verticalTabs)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="overlay"><span class="type-signature"></span>overlay<span class="signature">(options)</span><span class="type-signature"></span></h4>
 
     
 
@@ -17003,7 +17003,7 @@ when the notification is clicked</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line367">line 367</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line369">line 369</a>
     </li></ul></dd>
     
 
@@ -17075,6 +17075,53 @@ when the notification is clicked</p></td>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>title</code></td>
             
 
@@ -17089,7 +17136,19 @@ when the notification is clicked</p></td>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>The title of the window</p></td>
@@ -17113,7 +17172,19 @@ when the notification is clicked</p></td>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>An array of tab objects</p></td>
@@ -17137,18 +17208,32 @@ when the notification is clicked</p></td>
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>Additional buttons to add to the window's header
-as an HTML string</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Additional buttons to add to the window's
+header as an HTML string</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>css_class</code></td>
+                <td class="name"><code>footer</code></td>
             
 
             <td class="type">
@@ -17162,31 +17247,21 @@ as an HTML string</p></td>
             </td>
 
             
-
-            
-
-            <td class="description last"><p>Additional CSS classes to add to the overlay</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>single_footer</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">string</span>
+                    &lt;optional><br>
+                
 
+                
 
+                
+                </td>
+            
 
             
-            </td>
-
-            
-
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>If provided, a single footer to use for all
@@ -17211,24 +17286,42 @@ tabs rather than relying on the footer data from each provided tab object</p></t
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>An object of metadata attached to the overlay,
-where each key:val of the object is mapped to a <code>data-key=&quot;val&quot;</code> attribute</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>An object of metadata attached to the
+overlay, where each key:val of the object is mapped to a <code>data-key=&quot;val&quot;</code>
+attribute</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>verticalTabs</code></td>
+                <td class="name"><code>tabOrientation</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">bool</span>
+<span class="param-type">'vertical'</span>
+|
+
+<span class="param-type">'horizontal'</span>
 
 
 
@@ -17236,10 +17329,33 @@ where each key:val of the object is mapped to a <code>data-key=&quot;val&quot;</
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>Pass false to use horizontal tabs instead</p></td>
+            
+                <td class="default">
+                
+                    <code>'vertical'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Orientation of the tab bar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -17285,7 +17401,7 @@ where each key:val of the object is mapped to a <code>data-key=&quot;val&quot;</
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1732">line 1732</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1740">line 1740</a>
     </li></ul></dd>
     
 
@@ -17539,7 +17655,7 @@ content for a given page</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1832">line 1832</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1840">line 1840</a>
     </li></ul></dd>
     
 
@@ -20117,7 +20233,7 @@ via <code>$.timeago()</code>.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1865">line 1865</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1873">line 1873</a>
     </li></ul></dd>
     
 
@@ -20478,7 +20594,7 @@ via <code>$.timeago()</code>.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line2038">line 2038</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line2046">line 2046</a>
     </li></ul></dd>
     
 
@@ -24610,7 +24726,7 @@ Only support 'comment' for now and will only send the commentAuthor event.</p></
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1012">line 1012</a>
+        <a href="tbui.js.html">tbui.js</a>, <a href="tbui.js.html#line1020">line 1020</a>
     </li></ul></dd>
     
 
@@ -26780,7 +26896,7 @@ for settings of different <code>type</code>s.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tbmodule.js.html">tbmodule.js</a>, <a href="tbmodule.js.html#line938">line 938</a>
+        <a href="tbmodule.js.html">tbmodule.js</a>, <a href="tbmodule.js.html#line932">line 932</a>
     </li></ul></dd>
     
 
@@ -27797,7 +27913,7 @@ ratelimit period ends</p></td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Wed Aug 02 2023 02:05:09 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Wed Aug 02 2023 02:08:43 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
