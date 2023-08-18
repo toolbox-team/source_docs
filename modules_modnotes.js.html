@@ -49,12 +49,14 @@
         <article>
             <pre class="prettyprint source linenums"><code>import $ from 'jquery';
 
-import {pipeAsync, map, page} from 'iter-ops';
+import {map, page, pipeAsync} from 'iter-ops';
 
-import {Module} from '../tbmodule.js';
-import {link, isModSub, isNewModmail} from '../tbcore.js';
-import {escapeHTML, htmlEncode} from '../tbhelpers.js';
 import * as TBApi from '../tbapi.ts';
+import {isModSub, isNewModmail, link} from '../tbcore.js';
+import {escapeHTML, htmlEncode} from '../tbhelpers.js';
+import TBListener from '../tblistener.js';
+import {Module} from '../tbmodule.js';
+import {setSettingAsync} from '../tbstorage.js';
 import {
     drawPosition,
     FEEDBACK_NEGATIVE,
@@ -65,8 +67,6 @@ import {
     relativeTime,
     textFeedback,
 } from '../tbui.js';
-import TBListener from '../tblistener.js';
-import {setSettingAsync} from '../tbstorage.js';
 
 /**
  * An object mapping modnote types to human-friendly display names.
@@ -208,7 +208,7 @@ function getLatestModNote (subreddit, user) {
  * @param {string} filter Criteria for filtering notes
  * @returns {AsyncGenerator&lt;any, void>}
  */
-async function * getAllModNotes (subreddit, user, filter) {
+async function* getAllModNotes (subreddit, user, filter) {
     // Starts with the latest page of notes
     let before = undefined;
     while (true) {
@@ -400,14 +400,16 @@ function createModNotesPopup ({
                     >
                         (no label)
                     &lt;/option>
-                    ${Object.entries(labelNames).reverse().map(([value, name]) => `
+                    ${
+            Object.entries(labelNames).reverse().map(([value, name]) => `
                         &lt;option
                             value="${htmlEncode(value)}"
                             ${defaultNoteLabel === name.toLowerCase().replace(/\s/g, '_') ? 'selected' : ''}
                         >
                             ${htmlEncode(name)}
                         &lt;/option>
-                    `).join('')}
+                    `).join('')
+        }
                 &lt;/select>
                 &lt;input
                     type="text"
@@ -445,23 +447,25 @@ function createModNotesPopup ({
             filter = 'MOD_ACTION';
         }
 
-        const $notesPager = progressivePager({
-            controlPosition: 'bottom',
-            emptyContent: `
+        const $notesPager = progressivePager(
+            {
+                controlPosition: 'bottom',
+                emptyContent: `
                 &lt;p>
                     No notes
                 &lt;/p>
             `,
-        }, pipeAsync(
-            // fetch mod notes that match this tab
-            getAllModNotes(subreddit, user, filter),
-            // build table rows for each note
-            map(note => buildNoteTableRow(note)),
-            // group into pages of 20 items each
-            page(20),
-            // construct the table and insert the generated rows for each page
-            map(pageItems => {
-                const $wrapper = $(`
+            },
+            pipeAsync(
+                // fetch mod notes that match this tab
+                getAllModNotes(subreddit, user, filter),
+                // build table rows for each note
+                map(note => buildNoteTableRow(note)),
+                // group into pages of 20 items each
+                page(20),
+                // construct the table and insert the generated rows for each page
+                map(pageItems => {
+                    const $wrapper = $(`
                     &lt;table class="tb-modnote-table">
                         &lt;thead>
                             &lt;tr>
@@ -474,10 +478,11 @@ function createModNotesPopup ({
                         &lt;tbody>&lt;/tbody>
                     &lt;/table>
                 `);
-                $wrapper.find('tbody').append(...pageItems);
-                return $wrapper;
-            }),
-        ));
+                    $wrapper.find('tbody').append(...pageItems);
+                    return $wrapper;
+                }),
+            ),
+        );
         $content.append($notesPager);
     });
 
@@ -517,7 +522,9 @@ function buildNoteTableRow (note) {
     if (note.mod_action_data?.action) {
         $noteDetails.append(`
             &lt;span class="tb-modnote-action-summary">
-                Took action "${escapeHTML(note.mod_action_data.action)}"${note.mod_action_data.details ? ` (${escapeHTML(note.mod_action_data.details)})` : ''}${note.mod_action_data.description ? `: ${escapeHTML(note.mod_action_data.description)}` : ''}
+                Took action "${escapeHTML(note.mod_action_data.action)}"${
+            note.mod_action_data.details ? ` (${escapeHTML(note.mod_action_data.details)})` : ''
+        }${note.mod_action_data.description ? `: ${escapeHTML(note.mod_action_data.description)}` : ''}
             &lt;/span>
         `);
     }
@@ -525,11 +532,15 @@ function buildNoteTableRow (note) {
     if (note.user_note_data?.note) {
         $noteDetails.append(`
             &lt;blockquote>
-                ${note.user_note_data.label ? `
+                ${
+            note.user_note_data.label
+                ? `
                     &lt;span style="color:${labelColors[note.user_note_data.label]}">
                         [${labelNames[note.user_note_data.label] || escapeHTML(note.user_note_data.label)}]
                     &lt;/span>
-                ` : ''}
+                `
+                : ''
+        }
                 ${escapeHTML(note.user_note_data.note)}
             &lt;/blockquote>
         `);
@@ -732,7 +743,7 @@ export default new Module({
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Thu Aug 17 2023 19:45:05 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Fri Aug 18 2023 15:22:15 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
